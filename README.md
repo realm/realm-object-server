@@ -8,16 +8,15 @@ The Realm Mobile Platform delivers automatic and seamless realtime data sync and
 
 The Realm Mobile Database is cross-platform, supporting both iOS and Android, and the Realm Object Server is ready to run on your servers or on your favorite cloud.
 
-Read all the details [here](https://realm.io/products/realm-mobile-platform/).
-You may also want to checkout our [launch post](https://realm.io/news/introducing-realm-mobile-platform/).
-
+Read all the details on our website [here](https://realm.io/products/realm-mobile-platform/).
+You can also check out our [launch post](https://realm.io/news/introducing-realm-mobile-platform/).
 
 ## Issue tracking
 
-The main purpose of this repo is to [track issues and feature ideas](https://github.com/realm/realm-mobile-platform/issues) related the Realm Object Server and other general issues not related to the specific SDK's.
+This repo tracks [issues and feature ideas](https://github.com/realm/realm-mobile-platform/issues) related the Realm Object Server, or other general issues _not_ related to specific SDKs.
 
-If you have an issues specific to the [Realm Mobile Database](https://realm.io/products/realm-mobile-database/) please create issues in the respective SDK repo:
-* [Android](https://github.com/realm/realm-java)
-* [iOS, macOS](https://github.com/realm/realm-cocoa)
+If you have an issues specific to the [Realm Mobile Database](https://realm.io/products/realm-mobile-database/), please create issues in thae relevant repo:
+* [Java](https://github.com/realm/realm-java)
+* [Objective-C & Swift](https://github.com/realm/realm-cocoa)
 * [React Native](https://github.com/realm/realm-js)
-* [Xamarin](https://github.com/realm/realm-dotnet). 
+* [Xamarin](https://github.com/realm/realm-dotnet)
