@@ -24,6 +24,6 @@ If you have an issues specific to the [Realm Mobile Database](https://realm.io/p
 
 ## Releases
 
-Beta versions will be coming out frequently during the Beta period, and a new relase tag will be added to this repository when it does. You can Watch this repo to get notified when a new Beta version is out.
+Beta versions will be coming out frequently during the Beta period, and a new release tag will be added to this repository when they do. You can Watch this repo to get notified when a new Beta version is out.
 
-Check the [Releases Page](https://github.com/realm/realm-mobile-platform/releases) to see the list of latests vesions and the changes introduced with each one.
+Check the [Releases Page](https://github.com/realm/realm-mobile-platform/releases) to see the list of latest vesions and the changes introduced with each one.
