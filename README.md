@@ -21,3 +21,9 @@ If you have an issues specific to the [Realm Mobile Database](https://realm.io/p
 * [Objective-C & Swift](https://github.com/realm/realm-cocoa)
 * [React Native](https://github.com/realm/realm-js)
 * [Xamarin](https://github.com/realm/realm-dotnet)
+
+## Releases
+
+Beta versions will be coming out frequently during the Beta period, and a new release tag will be added to this repository when they do. You can Watch this repo to get notified when a new Beta version is out.
+
+Check the [Releases Page](https://github.com/realm/realm-mobile-platform/releases) to see the list of latest versions and the changes introduced with each one.
