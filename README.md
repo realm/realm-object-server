@@ -27,3 +27,10 @@ If you have an issues specific to the [Realm Mobile Database](https://realm.io/p
 Beta versions will be coming out frequently during the Beta period, and a new release tag will be added to this repository when they do. You can Watch this repo to get notified when a new Beta version is out.
 
 Check the [Releases Page](https://github.com/realm/realm-mobile-platform/releases) to see the list of latest versions and the changes introduced with each one.
+
+## Code of Conduct
+
+This project adheres to the [Contributor Covenant Code of Conduct](https://realm.io/conduct).
+By participating, you are expected to uphold this code. Please report
+unacceptable behavior to [info@realm.io](mailto:info@realm.io).
+
