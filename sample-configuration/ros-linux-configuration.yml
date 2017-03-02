@@ -104,6 +104,11 @@ auth:
     ## This provider needs no configuration (uncommenting the next line enables it).
     # facebook: {}
 
+    ## This enables authentication via an Azure Active Directory access token for a specific directory.
+    # azuread:
+      ## The Directory Id as retrieved from the Active Directory properties in the Azure portal.
+      # tenant_id: '01234567-89ab-cdef-0123-4567890a'
+
 ## ----------------------------------------------------------------------------
 
 proxy:
