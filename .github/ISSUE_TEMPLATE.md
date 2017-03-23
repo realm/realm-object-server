@@ -52,22 +52,22 @@
 <!--- Please provide the output of the following commands on the (Linux) server: -->
 
 <details>
-<summary>`systemctl status realm-object-server.service`</summary>
-```
-Paste output here
-```
+  <summary>systemctl status realm-object-server.service</summary>
+  <code>
+    Paste output here
+  </code>
 </details>
 
 <details>
-<summary>`sudo journalctl -u realm-object-server.service`</summary>
-```
-Paste output here
-```
+  <summary>sudo journalctl -u realm-object-server.service</summary>
+  <code>
+    Paste output here
+  </code>
 </details>
 
 <details>
-<summary>`cat /var/log/realm-object-server.log`</summary>
-```
-Paste output here
-```
+  <summary>cat /var/log/realm-object-server.log</summary>
+  <code>
+    Paste output here
+  </code>
 </details>
