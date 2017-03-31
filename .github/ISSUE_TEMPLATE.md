@@ -1,15 +1,17 @@
-<!--- We LOVE to help with any issues or bugs you have! -->
+<!---
+We LOVE to help with any issues or bugs you have!
 
-<!--- Questions: If you have questions about how to use Realm, please ask on -->
-<!--- StackOverflow: http://stackoverflow.com/questions/ask?tags=realm -->
-<!--- We monitor the `realm` tag. -->
+Questions: If you have questions about how to use Realm, please ask on
+StackOverflow: http://stackoverflow.com/questions/ask?tags=realm
+We monitor the `realm` tag.
 
-<!--- Feature Request: Just fill in the first two sections below. -->
+Feature Request: Just fill in the first two sections below.
 
-<!--- Bugs: To help you as fast as possible with an issue please describe your issue  -->
-<!--- and the steps you have taken to reproduce it in as much detail as possible.  -->
+Bugs: To help you as fast as possible with an issue please describe your issue
+and the steps you have taken to reproduce it in as much detail as possible.
 
-<!--- Thanks for helping us help you! :-)  -->
+Thanks for helping us help you! :-)
+-->
 
 ## Goals
 
@@ -30,11 +32,13 @@
 
 ## Code Sample
 
-<!--- Please provide a code sample or test case that highlights the issue. -->
-<!--- If relevant, include your model definitions. -->
-<!--- For larger code samples, links to external gists/repositories are preferred. -->
-<!--- Alternatively, you can share information confidentially via email at help@realm.io. -->
-<!--- Full projects that we can compile and run ourselves are ideal! -->
+<!---
+Please provide a code sample or test case that highlights the issue.
+If relevant, include your model definitions.
+For larger code samples, links to external gists/repositories are preferred.
+Alternatively, you can share information confidentially via email at help@realm.io.
+Full projects that we can compile and run ourselves are ideal!
+-->
 
 ## Version of Realm and Tooling
 
