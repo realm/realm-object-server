@@ -64,6 +64,11 @@ auth:
     ## quickly. This value is represented in seconds. Default: 10 minutes
     # access_token: 600
 
+  ## The include path to use for including implementations for custom
+  ## authentication providers. This can be overwritten per provider via
+  ## auth:providers:${name}:include_path.
+  # providers_include_path: '/usr/local/lib/realm/auth/providers'
+
   providers:
     ## Providers of authentication tokens. Each provider has a configuration
     ## object associated with it. If a provider is included here and its
@@ -108,6 +113,22 @@ auth:
     # azuread:
       ## The Directory Id as retrieved from the Active Directory properties in the Azure portal.
       # tenant_id: '01234567-89ab-cdef-0123-4567890a'
+
+    ## This would enable a custom authentication provider with the name "custom/twitter".
+    ## The prefix "custom/" is necessary for all authentication providers using a custom
+    ## implementation to ensure forwards-compatiblity and avoid name clashes.
+    # custom/twitter:
+      ## The implementation to be used. This can be either one of the predefined
+      ## implementations under a custom name or a custom implementation found at
+      ## the include_path or if not given at the auth:providers_include_path.
+      # implementation: custom_provider_implementation.js
+
+      ## The include path to use for this providers custom implementation.
+      # include_path: /~/.realm/auth
+
+      ## Beyond that custom implementations can define custom configuration
+      ## options which will be populated to their configuration and merged with
+      ## the default values they can define.
 
 ## ----------------------------------------------------------------------------
 
