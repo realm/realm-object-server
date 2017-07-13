@@ -9,6 +9,7 @@ Feature Request: Just fill in the first two sections below.
 Bugs: To help you as fast as possible with an issue please describe your issue
 and the steps you have taken to reproduce it in as much detail as possible.
 
+-Thanks for helping us help you! :-)
 -->
 
 ## Goals
