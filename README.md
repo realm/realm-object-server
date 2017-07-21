@@ -32,3 +32,5 @@ This project adheres to the [Contributor Covenant Code of Conduct](https://realm
 By participating, you are expected to uphold this code. Please report
 unacceptable behavior to [info@realm.io](mailto:info@realm.io).
 
+![analytics](https://ga-beacon.appspot.com/UA-50247013-2/realm-mobile-platform/README?pixel)
+
