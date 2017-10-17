@@ -31,7 +31,7 @@ Once you have obtained a feature token, you need to set it in your environment:
 
     $ export FEATURE_TOKEN=<feature token data>
 
-Next, from a local clone of this repository, use the `docker-compose` command to start ROS Enterprise:
+Next, use the `docker-compose` command to start ROS Enterprise:
 
     $ docker-compose up
 
