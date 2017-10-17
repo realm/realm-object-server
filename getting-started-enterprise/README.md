@@ -1,5 +1,9 @@
 # Getting Started With Realm Object Server Enterprise
 
+This introduction to Realm Object Server Enterprise will show how to setup a cluster of Realm Object Servers with Docker and show how failover can be simulated.
+
+### Prerequisites
+
 The quickest way to get started with ROS Enterprise is by using Docker.  Make sure you have at least version `17.09.0-ce`:
 
     $ docker version
@@ -25,7 +29,9 @@ If you haven't already done so, clone this repository:
     $ git clone https://github.com/realm/realm-mobile-platform.git
     $ cd realm-mobile-platform/getting-started-enterprise
 
-In addition to Docker, you will need a feature token in order to use these Enterprise features.  For more information, please visit [https://realm.io/pricing/](https://realm.io/pricing/).
+In addition to Docker, you will need a feature token in order to use these Enterprise features. You can obtain a trial feature token from [here](https://realm.io/pricing/).
+
+### Setup
 
 Once you have obtained a feature token, you need to set it in your environment:
 
@@ -35,7 +41,7 @@ Next, use the `docker-compose` command to start ROS Enterprise:
 
     $ docker-compose up
 
-You should see log output from several services in your console. ROS should now be accessible at `127.0.0.1:9080`. You can also access the Consul UI at [http://127.0.0.1:8500](http://127.0.0.1:8500).  Pressing `Ctrl-C` will stop all services and return you to the shell prompt.
+You should see log output from several services in your console. ROS should now be accessible at `127.0.0.1:9080`. You can also access the Consul UI at [http://127.0.0.1:8500](http://127.0.0.1:8500). Pressing `Ctrl-C` will stop all services and return you to the shell prompt.
 
 ### Inspecting your deployment
 
@@ -69,7 +75,7 @@ If the deployment is running in the background, you can tear it down with:
 
 ### Simulate failover
 
-This deployment includes a single Sync Worker Group, comprised of three Sync Workers running in Replicated Mode.  When started, each of these services will assume a role based on election:  `master`, `slave`, and `spare`.  You can get the status of the group by using the Consul UI:
+This deployment includes a single Sync Worker Group, comprised of three Sync Workers running in Replicated Mode. When started, each of these services will assume a role based on election:  `master`, `slave`, and `spare`. You can get the status of the group by using the Consul UI:
 
 1. Navigate to the Consul UI: [http://127.0.0.1:8500](http://127.0.0.1:8500)
 
@@ -77,7 +83,7 @@ This deployment includes a single Sync Worker Group, comprised of three Sync Wor
 
 3.  Click on "sync-worker-group", then click on "default/", and then on "master".
 
-4. The value on the right side is a JSON structure that indicates which node is master and which is slave.  It also indicates if the slave is complete.  When the slave is complete, the Sync Worker Group is operational and ready for a failover event.
+4. The value on the right side is a JSON structure that indicates which node is master and which is slave. It also indicates if the slave is complete. When the slave is complete, the Sync Worker Group is operational and ready for a failover event.
 
 Once you have made a determination of which service to terminate, you can do so by scaling it down:
 
@@ -95,7 +101,7 @@ Caution: you should not scale these services beyond `1`, as they are stateful an
 
 ### Using a GUI
 
-[Portainer](https://portainer.io) is a great way to manage your local docker installation and visualize deployments better.  It also provides some realtime performance graphs, logs and console access to containers.
+[Portainer](https://portainer.io) is a great way to manage your local docker installation and visualize deployments better. It also provides some realtime performance graphs, logs and console access to containers.
 
 To install it, simply run:
 
@@ -103,4 +109,4 @@ To install it, simply run:
 
 You can then access it at [http://127.0.0.1:9000](http://127.0.0.1:9000).
 
-CAUTION: Do not run this configuration on production systems.  Portainer is run without requiring authentication simply for convenience.
+CAUTION: Do not run this configuration on production systems. Portainer is run without requiring authentication simply for convenience.
