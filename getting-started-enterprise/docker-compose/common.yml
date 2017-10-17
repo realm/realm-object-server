@@ -1,0 +1,25 @@
+version: '2.2'
+services:
+  ros_common:
+    image: "${DOCKER_IMAGE:-realm/realm-object-server-enterprise}"
+    environment:
+      PUBLIC_KEY_PATH: /config/token-signature.pub
+      PRIVATE_KEY_PATH: /config/token-signature.key
+      CONSUL_HOST: consul
+      FEATURE_TOKEN: ${FEATURE_TOKEN}
+    volumes:
+      - ../keys/token-signature.pub:/config/token-signature.pub:ro
+      - ../keys/token-signature.key:/config/token-signature.key:ro
+    restart: always
+  ros_resync:
+    extends:
+      service: ros_common
+    command:
+      - run
+      - resync
+      - --data
+      - /data
+      - --advertise-address
+      - eth0
+      - --remotelog
+      - auth:15000
