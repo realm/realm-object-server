@@ -1,3 +1,20 @@
+# Release 2.0.9
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* Removes "del" as a dependency, fixing startup
+* Exports RealmFactory and RealmDefinition classes
+
+### Enhancements
+* None
+
+### Internals
+* Publishing releases now automatically makes a release in the public reposutory
+* CHANGELOG.md is now maintained automatically from RELEASENOTES.md
+* Release notes should now be updated in RELEASENOTES.md
+
 # Release 2.0.8
 
 ### Breaking changes
