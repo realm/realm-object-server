@@ -1,3 +1,22 @@
+# Release 2.0.8
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* Make sync client logs less verbose (Fixes \#433)
+* Render the service metadata into the message (Fixes \#233, \#250)
+
+### Enhancements
+* Information about the feature token is now logged upon startup.
+
+### Internals
+* Silences migration tests (Fixes #486)
+* Fixed bug in CloudKit auth provider: https://github.com/realm/realm-object-server/issues/282
+* Make releases on public repo
+* Update private repository name
+* New changelog workflow
+
 ## 2.0.7
 
 ### Breaking changes
