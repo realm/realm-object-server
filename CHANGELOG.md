@@ -1,3 +1,17 @@
+# Release 2.0.10
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* Fixes a circular dependency in built package
+
+### Enhancements
+* None
+
+### Internals
+* None
+
 # Release 2.0.9
 
 ### Breaking changes
