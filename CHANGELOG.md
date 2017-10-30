@@ -1,3 +1,17 @@
+# Release 2.0.11
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* Fix installation issue (ursa) on various platforms
+
+### Enhancements
+* None
+
+### Internals
+* Use node-rsa in favor of ursa.
+
 # Release 2.0.10
 
 ### Breaking changes
