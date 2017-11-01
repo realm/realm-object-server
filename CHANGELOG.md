@@ -1,3 +1,20 @@
+# Release 2.0.12
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* The LogService WebSocket endpoints now needs an authentication message with a valid access or refresh token, within
+  the first second of connecting to them. Realm Studio sends this message starting from v1.3.0.
+
+### Enhancements
+* Added comments to the `ros init` template files to describe available configs
+* A welcome page is now available to the user when visiting http://localhost:9080/ in a web-browser.
+* Added install script
+
+### Internals
+* Added acceptance testing against the install script for multiple platforms.
+
 # Release 2.0.11
 
 ### Breaking changes
@@ -5,6 +22,7 @@
 
 ### Bugs fixed
 * Fix installation issue (ursa) on various platforms
+* Fix's middlewares not being registered to services 
 
 ### Enhancements
 * None
@@ -348,239 +366,3 @@
 
 * There is now a migration tool integrated into ros cli.
 * The API for user and realm deletion has been added.
-
------8<----- FIXME: remove old automatically generated stuff below? -----8<-----
-
-## [v2.0.0-alpha.46](https://github.com/realm/ros/tree/v2.0.0-alpha.46) (2017-10-04)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.45...v2.0.0-alpha.46)
-
-## [v2.0.0-alpha.45](https://github.com/realm/ros/tree/v2.0.0-alpha.45) (2017-10-03)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.44...v2.0.0-alpha.45)
-
-**Fixed bugs:**
-
-- Cannot set permissions by username [\#439](https://github.com/realm/ros/issues/439)
-- Test failures with ros rc44 [\#428](https://github.com/realm/ros/issues/428)
-
-## [v2.0.0-alpha.44](https://github.com/realm/ros/tree/v2.0.0-alpha.44) (2017-10-02)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.43...v2.0.0-alpha.44)
-
-**Implemented enhancements:**
-
-- Support for Partial Sync [\#199](https://github.com/realm/ros/issues/199)
-- Support existing "API" for reading permissions [\#44](https://github.com/realm/ros/issues/44)
-- Support existing "API" for changing permission [\#43](https://github.com/realm/ros/issues/43)
-
-**Fixed bugs:**
-
-- Accepting offer create temporary wrong permission [\#417](https://github.com/realm/ros/issues/417)
-- Permissions: Non-Admin user can grant permisssions [\#416](https://github.com/realm/ros/issues/416)
-- Admin Realm is not updated with Star Permissions for userId [\#414](https://github.com/realm/ros/issues/414)
-- Current implementation of Permissions broke ROS [\#346](https://github.com/realm/ros/issues/346)
-
-## [v2.0.0-alpha.43](https://github.com/realm/ros/tree/v2.0.0-alpha.43) (2017-09-30)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.42...v2.0.0-alpha.43)
-
-## [v2.0.0-alpha.42](https://github.com/realm/ros/tree/v2.0.0-alpha.42) (2017-09-30)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.41...v2.0.0-alpha.42)
-
-## [v2.0.0-alpha.41](https://github.com/realm/ros/tree/v2.0.0-alpha.41) (2017-09-30)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.40...v2.0.0-alpha.41)
-
-**Fixed bugs:**
-
-- Permissions Appear Still Broken [\#403](https://github.com/realm/ros/issues/403)
-
-## [v2.0.0-alpha.40](https://github.com/realm/ros/tree/v2.0.0-alpha.40) (2017-09-28)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.39...v2.0.0-alpha.40)
-
-**Fixed bugs:**
-
-- error: Sync Connection\[19\]: Session\[2\]: Client file already bound in other session  [\#374](https://github.com/realm/ros/issues/374)
-- /auth/password is broken for non-admin and admin users [\#335](https://github.com/realm/ros/issues/335)
-
-## [v2.0.0-alpha.39](https://github.com/realm/ros/tree/v2.0.0-alpha.39) (2017-09-27)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.38...v2.0.0-alpha.39)
-
-**Fixed bugs:**
-
-- Lookup for `syncLabel` with admin token fails [\#376](https://github.com/realm/ros/issues/376)
-- Unhandled promise when logging in user [\#360](https://github.com/realm/ros/issues/360)
-
-## [v2.0.0-alpha.38](https://github.com/realm/ros/tree/v2.0.0-alpha.38) (2017-09-26)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.37...v2.0.0-alpha.38)
-
-**Implemented enhancements:**
-
-- Test Automatic Failover [\#328](https://github.com/realm/ros/issues/328)
-- Use ServiceWatch in SyncProxy [\#324](https://github.com/realm/ros/issues/324)
-- Update bindings to call into new /users API endpoint [\#42](https://github.com/realm/ros/issues/42)
-
-**Fixed bugs:**
-
-- Schema for \_\_admin Realm does not match [\#373](https://github.com/realm/ros/issues/373)
-- UnhandledPromiseRejectionWarning after re-connecting from offline [\#368](https://github.com/realm/ros/issues/368)
-- Invalid json in request results in 500 [\#363](https://github.com/realm/ros/issues/363)
-
-## [v2.0.0-alpha.37](https://github.com/realm/ros/tree/v2.0.0-alpha.37) (2017-09-25)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.36...v2.0.0-alpha.37)
-
-**Implemented enhancements:**
-
-- Access to Realm Studio should be possible to restrict to specific IP addresses [\#178](https://github.com/realm/ros/issues/178)
-
-**Fixed bugs:**
-
-- Unable to access admin realm from Realm Studio or bindings [\#278](https://github.com/realm/ros/issues/278)
-
-## [v2.0.0-alpha.36](https://github.com/realm/ros/tree/v2.0.0-alpha.36) (2017-09-22)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.35...v2.0.0-alpha.36)
-
-**Implemented enhancements:**
-
-- Create auth subclasses for existing auth providers [\#35](https://github.com/realm/ros/issues/35)
-- Migration of permissions from ROS 1.x [\#18](https://github.com/realm/ros/issues/18)
-
-**Fixed bugs:**
-
-- Sometimes the admin user cannot get an access token [\#338](https://github.com/realm/ros/issues/338)
-- Regular users cannot access /auth/users/:provider/:providerId [\#333](https://github.com/realm/ros/issues/333)
-
-## [v2.0.0-alpha.35](https://github.com/realm/ros/tree/v2.0.0-alpha.35) (2017-09-20)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.34...v2.0.0-alpha.35)
-
-**Implemented enhancements:**
-
-- Support multiple authentication providers [\#244](https://github.com/realm/ros/issues/244)
-
-**Fixed bugs:**
-
-- Wrong provider to auth/provider/provider returns 500 [\#310](https://github.com/realm/ros/issues/310)
-- Security issue: Can use REST endpoints with a revoked token [\#309](https://github.com/realm/ros/issues/309)
-- Tests failing with Node 7 and 8 that pass in Node 6 [\#307](https://github.com/realm/ros/issues/307)
-- Getting same refreshToken back on login after it was revoked [\#304](https://github.com/realm/ros/issues/304)
-- Wrong input to /auth/users/realm-admin/password gives 500 [\#300](https://github.com/realm/ros/issues/300)
-- Race condition between /health/ and admin user being created [\#282](https://github.com/realm/ros/issues/282)
-
-## [v2.0.0-alpha.34](https://github.com/realm/ros/tree/v2.0.0-alpha.34) (2017-09-19)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.33...v2.0.0-alpha.34)
-
-## [v2.0.0-alpha.33](https://github.com/realm/ros/tree/v2.0.0-alpha.33) (2017-09-19)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.32...v2.0.0-alpha.33)
-
-**Fixed bugs:**
-
-- Usernames should not cause tilde expansion to generate invalid paths [\#258](https://github.com/realm/ros/issues/258)
-
-## [v2.0.0-alpha.32](https://github.com/realm/ros/tree/v2.0.0-alpha.32) (2017-09-18)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.31...v2.0.0-alpha.32)
-
-## [v2.0.0-alpha.31](https://github.com/realm/ros/tree/v2.0.0-alpha.31) (2017-09-18)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.30...v2.0.0-alpha.31)
-
-**Fixed bugs:**
-
-- URI is not defined [\#289](https://github.com/realm/ros/issues/289)
-- Refresh Tokens Are Not Created Correctly [\#286](https://github.com/realm/ros/issues/286)
-- Major Security risk: `/Auth/users` setting isAdmin flag without authentication [\#268](https://github.com/realm/ros/issues/268)
-- Errors are not reported using RFC7807 [\#267](https://github.com/realm/ros/issues/267)
-- Security problem: Slashes in usernames allow stealing access to other users' Realms [\#265](https://github.com/realm/ros/issues/265)
-- ROS cannot create admin user [\#253](https://github.com/realm/ros/issues/253)
-- Can't shutdown ros with ctrl-C after an error. [\#234](https://github.com/realm/ros/issues/234)
-- Two users creating `/~/test-realm` will result in a single realm in the RealmManagementService [\#153](https://github.com/realm/ros/issues/153)
-
-## [v2.0.0-alpha.30](https://github.com/realm/ros/tree/v2.0.0-alpha.30) (2017-09-13)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.29...v2.0.0-alpha.30)
-
-**Implemented enhancements:**
-
-- Use public realm-js in ROS via feature token gating [\#31](https://github.com/realm/ros/issues/31)
-
-## [v2.0.0-alpha.29](https://github.com/realm/ros/tree/v2.0.0-alpha.29) (2017-09-13)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.28...v2.0.0-alpha.29)
-
-**Implemented enhancements:**
-
-- Log the version of ros when starting ros. [\#232](https://github.com/realm/ros/issues/232)
-- New API for retrieving users and metadata [\#115](https://github.com/realm/ros/issues/115)
-
-**Fixed bugs:**
-
-- Capture realm-js logs for the logger [\#228](https://github.com/realm/ros/issues/228)
-
-## [v2.0.0-alpha.28](https://github.com/realm/ros/tree/v2.0.0-alpha.28) (2017-09-12)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.27...v2.0.0-alpha.28)
-
-**Fixed bugs:**
-
-- "Failed to switch protocols" [\#229](https://github.com/realm/ros/issues/229)
-
-## [v2.0.0-alpha.27](https://github.com/realm/ros/tree/v2.0.0-alpha.27) (2017-09-12)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.26...v2.0.0-alpha.27)
-
-## [v2.0.0-alpha.26](https://github.com/realm/ros/tree/v2.0.0-alpha.26) (2017-09-12)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.25...v2.0.0-alpha.26)
-
-## [v2.0.0-alpha.25](https://github.com/realm/ros/tree/v2.0.0-alpha.25) (2017-09-11)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.24...v2.0.0-alpha.25)
-
-## [v2.0.0-alpha.24](https://github.com/realm/ros/tree/v2.0.0-alpha.24) (2017-09-10)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.23...v2.0.0-alpha.24)
-
-## [v2.0.0-alpha.23](https://github.com/realm/ros/tree/v2.0.0-alpha.23) (2017-09-09)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.22...v2.0.0-alpha.23)
-
-## [v2.0.0-alpha.22](https://github.com/realm/ros/tree/v2.0.0-alpha.22) (2017-09-07)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.21...v2.0.0-alpha.22)
-
-**Implemented enhancements:**
-
-- Create simple logging implementation [\#49](https://github.com/realm/ros/issues/49)
-
-## [v2.0.0-alpha.21](https://github.com/realm/ros/tree/v2.0.0-alpha.21) (2017-09-07)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.20...v2.0.0-alpha.21)
-
-## [v2.0.0-alpha.20](https://github.com/realm/ros/tree/v2.0.0-alpha.20) (2017-09-07)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.19...v2.0.0-alpha.20)
-
-## [v2.0.0-alpha.19](https://github.com/realm/ros/tree/v2.0.0-alpha.19) (2017-09-07)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.18...v2.0.0-alpha.19)
-
-**Implemented enhancements:**
-
-- Create default entrypoint [\#167](https://github.com/realm/ros/issues/167)
-- Logging Server implementation [\#107](https://github.com/realm/ros/issues/107)
-- Create Consul implementation of Discovery [\#62](https://github.com/realm/ros/issues/62)
-
-**Fixed bugs:**
-
-- ROS Agreed To Terms needs more fields and needs to be disabled during development [\#158](https://github.com/realm/ros/issues/158)
-- Validate auth tokens throughout code base [\#94](https://github.com/realm/ros/issues/94)
-
-## [v2.0.0-alpha.18](https://github.com/realm/ros/tree/v2.0.0-alpha.18) (2017-08-30)
-[Full Changelog](https://github.com/realm/ros/compare/v2.0.0-alpha.0...v2.0.0-alpha.18)
-
-**Implemented enhancements:**
-
-- REST Permissions API implementation [\#109](https://github.com/realm/ros/issues/109)
-- Design and implement ws notifications for RealmManagement and Auth Services [\#97](https://github.com/realm/ros/issues/97)
-- Build Discovery/interservice communication transport implementations [\#96](https://github.com/realm/ros/issues/96)
-- Exposing static files is hard [\#82](https://github.com/realm/ros/issues/82)
-- The request params are not passed to service endpoint handlers [\#81](https://github.com/realm/ros/issues/81)
-- Data directory and key paths should be configurable for all services [\#77](https://github.com/realm/ros/issues/77)
-- Rename `authenticate` to `authenticateOrCreateUser` [\#66](https://github.com/realm/ros/issues/66)
-- Integrate realm-sync-server into new service architecture [\#17](https://github.com/realm/ros/issues/17)
-
-**Fixed bugs:**
-
-- Services added using `addService` are not started [\#88](https://github.com/realm/ros/issues/88)
-- The request params are not passed to service endpoint handlers [\#81](https://github.com/realm/ros/issues/81)
-- Base HttpEndpoints should not have parameters and need to be unique [\#67](https://github.com/realm/ros/issues/67)
-- UsernamePassword service should return an error when given a bad password for an existing user [\#30](https://github.com/realm/ros/issues/30)
-- auth service should return the proper http codes and descriptive error messages for any errors [\#27](https://github.com/realm/ros/issues/27)
-- Tests no longer run on CI - Test app never exits [\#25](https://github.com/realm/ros/issues/25)
-
-## [v2.0.0-alpha.0](https://github.com/realm/ros/tree/v2.0.0-alpha.0) (2017-07-28)
-
-
-\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
