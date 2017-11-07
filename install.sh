@@ -47,11 +47,26 @@ if [ "$NVM_DIR" = "" ]; then
     export NVM_DIR="$HOME/.nvm"
     nvm_installed=1
 fi
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+    nvm_sh="$NVM_DIR/nvm.sh"  # This loads nvm
+elif [ "${platform}" = "Darwin" ]; then
+    # there is a possibility that NVM was installed by homebrew...
+    brew_prefix=$(brew --prefix nvm 2>/dev/null || true)
+    if [ "${brew_prefix}" != "" ]; then
+        nvm_sh="${brew_prefix}/nvm.sh"
+    fi
+fi
+
+[ -s "${nvm_sh}" ] || die "You have $NVM_DIR defined, but I could not find nvm.sh!"
+
+. "${nvm_sh}" || die "Could not load nvm!"  # This loads nvm
 
 info "Installing/Using NodeJS LTS..."
-nvm install --lts > ros-install.log 2>&1 || die "Could not install NodeJS."
+nvm install lts/* > ros-install.log 2>&1 || die "Could not install NodeJS."
+
+node_version=$(nvm current)
+info "Using Node.js ${node_version}"
 
 info "Upgrading npm..."
 npm install -g npm > ros-install.log 2>&1 || die "Could not upgrade npm."
@@ -63,6 +78,11 @@ npm install -g "${PACKAGE}" > ros-install.log 2>&1 || die "Could not install ${P
 cat - <<-EOD
 
 🎉    Realm Object Server is now installed!
+
+When using Realm Object Server, remember to load the proper Node.js version
+into your shell:
+
+    nvm use ${node_version}
 
 Here are some quick-start commands:
 

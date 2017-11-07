@@ -1,3 +1,58 @@
+# Release 2.0.15
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* Fixed a bug preventing from migrating from ROS1 when `cluster_node_id` is
+* Fixed a bug in SingleProcessDiscovery where find by tag returned unexpected
+  results
+* Fixed a bug in PermissionService where the listeners could potentially
+  operate on missing or invalidated objects
+* Return a proper error when using the admin token to make permission changes
+  where the userId might not exist.
+* Made sure that all symbols in `./realms/**/*.ts` are now exported
+
+### Enhancements
+* None
+
+### Internals
+* Extended RealmDirectoryService unit tests
+* Created exception class for ServiceUnavailable
+
+
+# Release 2.0.14
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* None
+
+### Enhancements
+* Update Node in the Docker image to 6.11.5
+
+### Internals
+* None
+
+# Release 2.0.13
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* None
+
+### Enhancements
+* The 1-to-2 migration now checks that the source directory is a valid root dir
+  and makes some suggestions if it is not.
+* THe 1-to-2 migration now checks that the destination directory is empty and
+  fails with a message about that if it is not an empty dir.
+* Expose the ROS port on the Docker container, to work with `docker run -P` for exposing on a random port.
+
+### Internals
+* None
+
 # Release 2.0.12
 
 ### Breaking changes
