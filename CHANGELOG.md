@@ -1,3 +1,31 @@
+# Release 2.0.16
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* Fixed a problem in the install script where nvm is installed by homebrew.
+* Added note to install script reminding the user to use the correct Node.js version.
+* Fixed an issue with exporting all custom realm symbols
+* Added support Visual Studio Code debugging and running when generating a server setup with `ros init`
+* Opening a partially synced Realm before the master Realm was created now works correctly
+* Terms of service is now persisted under the user's home directory. Fixes \#550
+
+### Enhancements
+* None
+
+### Internals
+* Updated the TS and JS templates to be easier to modify.
+* Terms of service now generates a distinctId as a UUID and uses that in all mixpanel events. Fixes \#600
+* Adding Mixpanel Usage Stats with Incremental timer
+* Adds simple stats collection interfaces, loosely matching that of prom-client, a Prometheus stats
+  emitter. In developer edition, metrics are stored in-memory, allowing mixpanel to access them.
+* Adds ROS usage by emitting to mixpanel data about the connections that go through the SyncProxyService
+* Exposes mix panel interface by gating it behind setting a distinctId. This is typically loaded from
+  the agreement file.
+* Created a MixpanelService which handles emitting stats periodically to mixpanel.
+
+
 # Release 2.0.15
 
 ### Breaking changes
