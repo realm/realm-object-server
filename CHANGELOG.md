@@ -1,3 +1,21 @@
+### Breaking changes
+* None
+
+### Bugs fixed
+* Realms with invalid paths are now rejected. Previously ROS would just create
+  unsyncable realms.
+* Realms with invalid paths are now skipped during 1-to-2 migration. This is
+  required because ROS-1 has the same behavior creating unsyncable realms, which
+  we are not going to fix.
+* Non-existent data files are not copied during 1-to-2 migration.
+* The default port for BasicServer's https is now properly set to 9443
+* HTTPS key and cert are now validated before attempting to start
+* server.shutdown() is now more forgiving in failed state scenarios
+
+### Enhancements
+* Server now has a simple method called `openRealm` that takes a remote path, like `/__admin` for example. This is always opened up with the internal server admin user. The schema is optional. 
+
+
 # Release 2.0.16
 
 ### Breaking changes
