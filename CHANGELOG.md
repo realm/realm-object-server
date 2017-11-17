@@ -2,6 +2,16 @@
 * None
 
 ### Bugs fixed
+* Close all Permission Realm files used to avoid running out of file handles.
+
+### Enhancements
+* None
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
 * Realms with invalid paths are now rejected. Previously ROS would just create
   unsyncable realms.
 * Realms with invalid paths are now skipped during 1-to-2 migration. This is
