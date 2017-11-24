@@ -2,6 +2,29 @@
 * None
 
 ### Bugs fixed
+* The health service no longer responds with 200 OK unless the server has fully
+  started. It is 503 in case the server is still loading.
+* The admin token user can now apply permission changes successfully.
+* The early log messages do not get skipped in Studio any more.
+* Users now have read-write access to their `/~/__permission` realms (again).
+  The recent switch to read-only was an unintended breaking change.
+* Fixed a potential race in the permission service. It reported itself started
+  before setting up all the listeners and granting default permissions.
+* [Object Server] Fixed a bug where deleted-then-recreated objects with identical
+  primary keys become empty.
+* [Object Server] Fixed a bug in outward partial sync to ensure
+  convergence of partial sync in the case where the client creates a primary key object, that is already present on the server, and subscribes to it in the same transaction.
+* Added error handling to the internal requests to the load balancer. This
+  should fix some unhandled promise rejections.
+
+### Enhancements
+* TypeScript and JavaScript templates now have .gitignore
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
 * Close all Permission Realm files used to avoid running out of file handles.
 
 ### Enhancements
