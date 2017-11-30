@@ -2,6 +2,21 @@
 * None
 
 ### Bugs fixed
+* Fixes MixpanelService issue for Enterprise where some stats might not be available until
+  the sync proxy is fully running.
+
+### Enhancements
+* Added JWT authentication provider. It allows you to create a custom
+  authentication service that issues signed Json Web Tokens that contain a
+  `userId` and optional `isAdmin` fields. The app then transmits the token to
+  ROS which verifies the signature and authenticates a user with the provided
+  `userId`.
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
 * The health service no longer responds with 200 OK unless the server has fully
   started. It is 503 in case the server is still loading.
 * The admin token user can now apply permission changes successfully.
