@@ -2,6 +2,18 @@
 * None
 
 ### Bugs fixed
+* The LogService will now respect token revocations (#735)
+* Revoked tokens will now never be assigned to the req.authToken.
+
+### Enhancements
+* TypeScript and JavaScript templates now have .gitignore.
+* The manual backup command is now available as `ros backup`.
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
 * Fixes MixpanelService issue for Enterprise where some stats might not be available until
   the sync proxy is fully running.
 
