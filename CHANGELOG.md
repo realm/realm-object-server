@@ -2,6 +2,18 @@
 * None
 
 ### Bugs fixed
+* Fixed an import statement to make it work on case-sensitive file systems (Linux).
+* Fixed a bug rendering `ros backup` useless because of incomplete path
+  resolution for `realm-backup`.
+
+### Enhancements
+* None
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
 * The LogService will now respect token revocations (#735)
 * Revoked tokens will now never be assigned to the req.authToken.
 
