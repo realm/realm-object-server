@@ -25,6 +25,7 @@ If you have an issues specific to the [Realm Database](https://realm.io/products
 ## Releases
 
 You can download the latest release Check the [Releases Page](https://github.com/realm/realm-mobile-platform/releases) to see the list of latest versions and the changes introduced with each one.
+Should you wish to get notified of new releases, you can use a service like [Libraries.io](https://libraries.io/npm/realm-object-server).
 
 ## Code of Conduct
 
