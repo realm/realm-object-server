@@ -2,6 +2,16 @@
 * None
 
 ### Bugs fixed
+* Export the JWT provider
+
+### Enhancements
+* Export stats classes and interfaces
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
 * Fixed an import statement to make it work on case-sensitive file systems (Linux).
 * Fixed a bug rendering `ros backup` useless because of incomplete path
   resolution for `realm-backup`.
