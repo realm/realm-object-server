@@ -2,6 +2,18 @@
 * None
 
 ### Bugs fixed
+* None
+
+### Enhancements
+* Indicate the version of ROS using `X-Powered-By` Header.
+* Added `Server.applyPermissions` method to allow changing permissions without
+having to log in with an admin user.
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
 * Export the JWT provider
 
 ### Enhancements
