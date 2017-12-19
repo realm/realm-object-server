@@ -2,6 +2,21 @@
 * None
 
 ### Bugs fixed
+* Fixed an issue that allowed non-admin users to create Realms in other users'
+home folders.
+* Fixed a bug causing the failover logic in SyncProxyService to trigger for
+  no good reason. This would manifest itself in "End of input" error messages
+  on the client in enterprise/cloud deployments.
+
+### Enhancements
+* Added `server.ensureRealmExists` API to create a Realm if it doesn't exist
+already.
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
 * None
 
 ### Enhancements
