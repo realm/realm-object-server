@@ -2,6 +2,16 @@
 * None
 
 ### Bugs fixed
+* None
+
+### Enhancements
+* None
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
 * Fixed an issue that allowed non-admin users to create Realms in other users'
 home folders.
 * Fixed a bug causing the failover logic in SyncProxyService to trigger for
