@@ -2,6 +2,19 @@
 * None
 
 ### Bugs fixed
+* Sometimes (and usuallly when starting ROS), an unnecessary warning was logged:
+'warn: TokenValidator couldn't check if token was revoked: The TokenRevocationRealm wasn't opened.'
+It no longer is.
+* Fixed a bug in RealmFactory where nonfatal errors would reject opening a Realm.
+
+### Enhancements
+* None
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
 * None
 
 ### Enhancements
