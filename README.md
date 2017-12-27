@@ -11,6 +11,12 @@ The Realm Database is cross-platform, supporting both iOS and Android, and the R
 Read all the details on our website [here](https://realm.io/products/realm-mobile-platform/).
 You can also check out our [launch post](https://realm.io/news/introducing-realm-mobile-platform/).
 
+## Samples
+
+The [samples](/samples) directory contains example code showing how to integrate Realm Object Server with your existing infrastructure.
+
+For an example of how to get started with the more advanced Enterprise Edition, see [/getting-started-enterprise](/getting-started-enterprise).
+
 ## Issue Tracking
 
 This repo tracks [issues and feature ideas](https://github.com/realm/realm-mobile-platform/issues) related the Realm Object Server, or other general issues _not_ related to specific SDKs.
@@ -34,4 +40,3 @@ By participating, you are expected to uphold this code. Please report
 unacceptable behavior to [info@realm.io](mailto:info@realm.io).
 
 ![analytics](https://ga-beacon.appspot.com/UA-50247013-2/realm-mobile-platform/README?pixel)
-

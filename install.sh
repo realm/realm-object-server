@@ -15,7 +15,7 @@ if [ "${user_id}" = "0" ]; then
     if [ "${SKIP_PROMPT}" = "" ]; then
         read -p "Are you sure you would like to continue as root? (y/N): " -n 1 -r
         echo ""
-        case "${REPLY}" in 
+        case "${REPLY}" in
             y|Y ) warn "Installing Realm Object Server as root...";;
             n|N ) exit 1;;
             * ) exit 1;;
@@ -102,7 +102,7 @@ need to inject NVM into your current shell.  You do do so by running:
     export NVM_DIR="$HOME/.nvm"
     . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-Enjoy! 
+Enjoy!
 EOD
 fi
 }

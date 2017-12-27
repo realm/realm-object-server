@@ -1,0 +1,19 @@
+{
+    "name": "my-ros-app",
+    "version": "1.0.0",
+    "description": "My new ROS App",
+    "main": "src/index.js",
+    "scripts": {
+        "build": "rm -rf dist; ./node_modules/.bin/tsc",
+        "clean": "rm -rf dist",
+        "start": "npm run build && node dist/index.js"
+    },
+    "devDependencies": {
+        "@types/faker": "^4.1.1",
+        "typescript": "2.5.3"
+    },
+    "dependencies": {
+        "faker": "^4.1.0",
+        "realm-object-server": "2.0.16"
+    }
+}
