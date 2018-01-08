@@ -1,3 +1,34 @@
+### Breaking changes
+* Some methods and properties that are considered internal API have been marked private. This will show
+up as compilation errors for typescript projects where they are accessed. While their usage is discouraged,
+you can temporarily silence the errors by using the bracket notation. For example, `server.realmFactory.open`
+can now be invoked by replacing it with `server['realmFactory'].open()`. Ultimately, you should move your
+project to use only the public API.
+* The following classes have been renamed:
+  * `Console` -> `ConsoleLogger`
+  * `File` -> `FileLogger`
+  * `FileConsole` -> `FileConsoleLogger`
+  * `AzureAuthServiceConfig` -> `AzureAuthProviderConfig`
+  * `CloudkitAuthProviderParams` -> `CloudkitAuthProviderConfig`
+  * `GoogleAuthServiceConfig` -> `GoogleAuthProviderConfig`
+  * `PasswordAuthParams` -> `PasswordAuthProviderConfig`
+  * `Mute` -> `MuteLogger`
+  * `ServerStartParams` -> `ServerConfig`
+
+### Bugs fixed
+* Tokens without expiration date can now be revoked.
+* Admin.json will now correctly be written, even if you provide custom private and public keys.
+
+### Enhancements
+* Expected HTTP access log entries are now logged on the "debug" level to avoid flooding the "info" log level.
+HTTP responses with status code 400 or above are now logged on "detail" level.
+This silence the verbose "GET /healthz HTTP/1.1 200" entries.
+* Expose a configuration option - `writeAdminTokenToJson` on `ServerConfig` that controls whether the admin token
+will be written to `data/keys/admin.json`.
+
+* Expose `jsonBodyLimit` in the `ServerConfig` interface to allow increasing the maximum request size.
+
+
 # Release 2.4.2
 
 ### Bugs fixed
