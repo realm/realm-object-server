@@ -1,3 +1,5 @@
+# Release 2.5.0
+
 ### Breaking changes
 * Some methods and properties that are considered internal API have been marked private. This will show
 up as compilation errors for typescript projects where they are accessed. While their usage is discouraged,
