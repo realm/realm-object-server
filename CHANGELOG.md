@@ -1,3 +1,16 @@
+Release 2.5.1
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* Fixed an issue in Server when using PrometheusStatsSink where the metrics
+  were bring created on each connection.
+
+### Enhancements
+* None
+
+
 # Release 2.5.0
 
 ### Breaking changes
