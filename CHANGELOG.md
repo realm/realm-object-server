@@ -1,4 +1,4 @@
-Release 2.5.1
+# Release 2.5.1
 
 ### Breaking changes
 * None
