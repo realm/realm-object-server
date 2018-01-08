@@ -1,5 +1,4 @@
-### Breaking changes
-* None
+# Release 2.4.2
 
 ### Bugs fixed
 * Sometimes (and usuallly when starting ROS), an unnecessary warning was logged:
@@ -11,18 +10,16 @@ It no longer is.
 * None
 
 
-### Breaking changes
-* None
+# Release 2.4.1
 
 ### Bugs fixed
-* None
+* 'ros start' now works again. (Regression was introduced in 2.4.0)
 
 ### Enhancements
 * None
 
 
-### Breaking changes
-* None
+# Release 2.4.0
 
 ### Bugs fixed
 * Fixed an issue that allowed non-admin users to create Realms in other users'
@@ -36,8 +33,7 @@ home folders.
 already.
 
 
-### Breaking changes
-* None
+# Release 2.3.0
 
 ### Bugs fixed
 * None
@@ -48,8 +44,7 @@ already.
 having to log in with an admin user.
 
 
-### Breaking changes
-* None
+# Release 2.2.0
 
 ### Bugs fixed
 * Export the JWT provider
@@ -58,8 +53,7 @@ having to log in with an admin user.
 * Export stats classes and interfaces
 
 
-### Breaking changes
-* None
+# Release 2.1.1
 
 ### Bugs fixed
 * Fixed an import statement to make it work on case-sensitive file systems (Linux).
@@ -70,8 +64,7 @@ having to log in with an admin user.
 * None
 
 
-### Breaking changes
-* None
+# Release 2.1.0
 
 ### Bugs fixed
 * The LogService will now respect token revocations (#735)
@@ -82,8 +75,7 @@ having to log in with an admin user.
 * The manual backup command is now available as `ros backup`.
 
 
-### Breaking changes
-* None
+# Release 2.0.23
 
 ### Bugs fixed
 * Fixes MixpanelService issue for Enterprise where some stats might not be available until
@@ -97,8 +89,7 @@ having to log in with an admin user.
   `userId`.
 
 
-### Breaking changes
-* None
+# Release 2.0.22
 
 ### Bugs fixed
 * The health service no longer responds with 200 OK unless the server has fully
@@ -120,8 +111,7 @@ having to log in with an admin user.
 * TypeScript and JavaScript templates now have .gitignore
 
 
-### Breaking changes
-* None
+# Release 2.0.21
 
 ### Bugs fixed
 * Close all Permission Realm files used to avoid running out of file handles.
@@ -130,8 +120,7 @@ having to log in with an admin user.
 * None
 
 
-### Breaking changes
-* None
+# Release 2.0.18
 
 ### Bugs fixed
 * Realms with invalid paths are now rejected. Previously ROS would just create
@@ -146,6 +135,23 @@ having to log in with an admin user.
 
 ### Enhancements
 * Server now has a simple method called `openRealm` that takes a remote path, like `/__admin` for example. This is always opened up with the internal server admin user. The schema is optional. 
+
+
+# Release 2.0.17
+
+### Bugs fixed
+* The migration tool now also migrates global realms.
+* The default port for BasicServer's https is now properly set to 9443
+
+### Enhancements
+* There are two new special realms where permissions are reflected.
+  `/<userid>/__perm` contains user-specific permissions and `/__perm` contains
+  wildcard permissions. The old special realms are still available and reflect
+  the same permissions, but they might contain duplicates. They are only there
+  for compatibility and will be removed in the future.
+* `ros migrate` will copy realm files by default. Specify `--norealms` to disable that.
+* Added notice to users about the long time 'ros init' can take.
+* Updated realm-js to version 2.0.5
 
 
 # Release 2.0.16
