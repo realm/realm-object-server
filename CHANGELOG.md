@@ -1,3 +1,20 @@
+# Release 2.6.0
+
+### Breaking changes
+* The `DELETE auth/user/:userId` endpoint is now deprecated and will be removed at a later version. Instead use
+`DELETE auth/users/:userId` (`user` is now plural - `users` to align with the other endpoints mounted on `auth`).
+
+### Bugs fixed
+* In clustered scenarios, `/health` should report the overall health of the cluster. If interested in
+the health of a single instance, pass `?thisInstance=true` as query string.
+
+### Enhancements
+* Expose configuration options for the JWT Auth Provider to allow customizing the names of the `userId` and `isAdmin` fields.
+* Adds an optional `requiredAttributes` option to the JWT Auth Provider, allowing filtering of JWT tokens.
+* Adds an optional `providerName` option to the JWT Auth Provider, allowing the provider to be enabled under different names.
+* Added Anonymous and Nickname auth providers.
+
+
 # Release 2.5.1
 
 ### Breaking changes
