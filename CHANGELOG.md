@@ -1,3 +1,15 @@
+# Release 2.6.1
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* Fixed an issue with `ros init` not installing the typescript dependency and subsequently, `npm start` failing.
+
+### Enhancements
+* None
+
+
 # Release 2.6.0
 
 ### Breaking changes
