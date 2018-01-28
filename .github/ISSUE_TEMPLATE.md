@@ -56,21 +56,15 @@ Full projects that we can compile and run ourselves are ideal!
 
 <details>
   <summary>systemctl status realm-object-server.service</summary>
-  <code>
-    Paste output here
-  </code>
+  <pre>Paste output here</pre>
 </details>
 
 <details>
   <summary>sudo journalctl -u realm-object-server.service</summary>
-  <code>
-    Paste output here
-  </code>
+  <pre>Paste output here</pre>
 </details>
 
 <details>
   <summary>cat /var/log/realm-object-server.log</summary>
-  <code>
-    Paste output here
-  </code>
+  <pre>Paste output here</pre>
 </details>
