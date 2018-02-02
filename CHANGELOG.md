@@ -1,3 +1,15 @@
+# Release 2.7.1
+
+### Breaking changes
+* Moved the dependency on @types/cors from dev to actual dependency. This fixes issues when using ROS in a TypeScript project.
+
+### Bugs fixed
+* None
+
+### Enhancements
+* None
+
+
 # Release 2.7.0
 
 ### Breaking changes
