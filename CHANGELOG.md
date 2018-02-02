@@ -1,3 +1,29 @@
+# Release 2.7.0
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* None
+
+### Enhancements
+* Added `emailHandler` property on the `PasswordAuthProvider` config object. Set that to receive callbacks
+whenever a user requests a password reset.
+* A new token, called UserToken, that will be used by partial
+  sync. The user token has this form
+    {
+        "app_id":"io.realm.Auth",
+        "identity":"ecd6649d80c7ad8d0e2d29fa94268d06",
+        "salt":"bb4522fa",
+        "expires":1516373219,
+        "is_admin":false
+    }
+  A user token is obtained by sending a refresh token to /auth without "path"
+  in the body of the request.
+* A new API has been exposed to enable, disable, and configure authentication providers at runtime. It is currently limited
+to the built-in providers.
+
+
 # Release 2.6.2
 
 ### Breaking changes
