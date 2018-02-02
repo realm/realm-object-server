@@ -1,3 +1,15 @@
+# Release 3.0.0-alpha.1
+
+### Breaking changes
+* Using realm-sync 3.0 with protocol breaking changes.
+
+### Bugs fixed
+* None
+
+### Enhancements
+* None
+
+
 # Release 2.7.1
 
 ### Breaking changes
