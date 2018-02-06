@@ -1,3 +1,15 @@
+# Release 3.0.0-alpha.2
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* None
+
+### Enhancements
+* None
+
+
 # Release 3.0.0-alpha.1
 
 ### Breaking changes
