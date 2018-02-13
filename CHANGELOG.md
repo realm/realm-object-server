@@ -1,3 +1,16 @@
+# Release 2.7.2
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* `Discovery.prototype.waitForService` now unsubscribes from the service watch when it resolves.
+  Not unsubscribing could cause some service discovery implementations to leak.
+
+### Enhancements
+* None
+
+
 # Release 3.0.0-alpha.4
 
 ### Breaking changes
