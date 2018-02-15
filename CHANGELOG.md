@@ -1,3 +1,12 @@
+# Release 2.7.3
+
+### Bugs fixed
+* The /health endpoint now responds correctly to an OPTIONS / CORS-preflight request
+
+### Enhancements
+* None
+
+
 # Release 2.7.2
 
 ### Breaking changes
