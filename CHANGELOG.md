@@ -1,3 +1,12 @@
+# Release 2.7.4
+
+### Bugs fixed
+* None
+
+### Enhancements
+* In order not to be opinionated. The package-lock.json will not be generated with `ros init` commands
+
+
 # Release 3.0.0-alpha.6
 
 ### Breaking changes
