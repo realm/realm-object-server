@@ -1,3 +1,12 @@
+# Release 2.8.0
+
+### Bugs fixed
+* None
+
+### Enhancements
+* None
+
+
 # Release 2.7.5
 
 ### Bugs fixed
