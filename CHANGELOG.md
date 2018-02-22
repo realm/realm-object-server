@@ -1,3 +1,12 @@
+# Release 2.7.5
+
+### Bugs fixed
+* Fixing signatures and comments for index.ts and index.js files
+
+### Enhancements
+* None
+
+
 # Release 2.7.4
 
 ### Bugs fixed
