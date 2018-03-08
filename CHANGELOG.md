@@ -1,3 +1,14 @@
+# Release 2.8.1
+
+### Bugs fixed
+* None
+
+### Enhancements
+* Added the ability to specify a custom Authorization header name for incoming HTTP requests.
+* Add retry logic when internally accessing services in case some services are behind
+  a proprietary HTTP proxy that doesn't start proxying incoming requests right away.
+
+
 # Release 3.0.0-alpha.9
 
 ### Breaking changes
