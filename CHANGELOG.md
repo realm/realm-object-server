@@ -1,3 +1,12 @@
+# Release 3.0.0-beta.2
+
+### Bugs fixed
+* None
+
+### Enhancements
+* None
+
+
 # Release 3.0.0-beta.1
 
 ### Breaking changes
