@@ -1,3 +1,12 @@
+# Release 3.0.0-beta.5
+
+### Bugs fixed
+* The build script now copies the password reset assets to the dist folder.
+
+### Enhancements
+* None
+
+
 # Release 3.0.0-beta.4
 
 ### Bugs fixed
