@@ -1,3 +1,13 @@
+# Release 3.0.0-beta.4
+
+### Bugs fixed
+* The build script now copies the email templates to the dist folder, avoiding a crash
+* The JWT auth provider error messages will now correctly serialize the rejection reason.
+
+### Enhancements
+* None
+
+
 # Release 3.0.0-beta.3
 
 ### Bugs fixed
