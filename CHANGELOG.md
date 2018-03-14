@@ -1,3 +1,12 @@
+# Release 3.0.0-rc.1
+
+### Bugs fixed
+* None
+
+### Enhancements
+* None
+
+
 # Release 3.0.0-beta.5
 
 ### Bugs fixed
