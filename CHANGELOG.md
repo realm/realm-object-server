@@ -1,3 +1,52 @@
+# Release 3.0.0
+
+### Breaking Changes
+* Using realm-sync 3.0 with protocol breaking changes. This release is protocol backwards compatible
+  with existing SDKs when syncing "full-realm" Realms, but requires the following versions when using partial sync:
+  - Java: 5.0.0
+  - Cocoa: 3.2.0
+  - Javascript: 2.3.0
+  - .NET: 2.2.0 - will be released soon.
+* `SyncService`'s `dataPath` configuration property is now deprecated and will be removed in a
+  future version. The current default value of './sync' (relative to the server's `dataPath`)
+  will be used after the removal.
+* A new default realm is created by the server and given the
+  sync path "/default". The default Realm only contains a schema
+  version right now. Later it will contain the data currently in
+  the admin Realm and other internal Realms.
+* Server Realms are grouped into three types: "full-realm", "reference-realm",
+  and "partial-realm". The realm type is stored in a new column in the admin Realm.
+  "full-realm" realms can be used for full sync. "reference-realm" realms
+  are used for partial sync. Queries are made in "reference-realm" realms.
+  "partial-realm" realms are used by clients that connect to partial sync
+  and have urls containing "__partial".
+* A permission system is made for the three types of Realms.
+  * Full realms have the standard permission system and a non-admin user only
+    has access to its own Realms or Reams with explicit permissions.
+  * Reference Realms are freely accessible by everybody. Object level permissions
+    will take care of restricting access.
+  * Partial Realms are individual and can only be used by the owner.
+* A Reference Realm is made automatically when partial sync is started with a new
+  url. A user can only create a new reference Realm in its own
+  directory. An admin user can create arbitrary reference Realms.
+* A realm can never switch type. It is not allowed to perform partial sync with a
+  "full-realm" Realm. It is allowed for an admin user to perform full sync with
+  a reference realm.
+* The default Realm has type "reference-realm" and can be used for partial sync by
+  everybody out of the box.
+
+### Bugs fixed
+* The JWT auth provider error messages will now correctly serialize the rejection reason.
+
+### Enhancements
+* Added `emailHandlerConfig` to the `PasswordAuthProviderConfig` to use a nodemailer to send password reset and email confirmation emails.
+* Added UI for email confirmation and password reset on /confirm-email and /reset-password respectively.
+* A new default realm is created by the server and given the
+  sync path "/default". The default Realm only contains a schema
+  version right now. Later it will contain the data currently in
+  the admin Realm and other internal Realms.
+
+
 # Release 3.0.0-rc.1
 
 ### Bugs fixed
