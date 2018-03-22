@@ -1,3 +1,21 @@
+# Release 3.1.0-rc.1
+
+### Bugs fixed
+* Proper HTTP responses after Upgrade failures.
+* npm will no longer try to download dependencies that are already bundled when installing `realm-object-server`.
+
+### Enhancements
+* Improvements to Winston-based loggers:
+  * `WinstonLogger` now exposes its internal winston logger instance, allowing for customization such as adding more transports.
+  * `ConsoleLogger`, `FileLogger`, and `FileConsoleLogger` gained new parameters on their constructors for the winston transport options.
+* Each incoming request gets a UUID for tracking.
+* Trace level logging of HTTP requests and responses.
+* Added `forceCodeConfig` on the `IAuthProviderConfig` interface to allow marking certain providers
+as protected, ensuring that their configuration is reset upon ROS restart.
+* `ros init`-created apps get file logging enabled by default.
+* The `%BASE_URL%` template variable will no longer contain trailing slashes.
+
+
 # Release 3.0.0
 
 ### Breaking Changes
