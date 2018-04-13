@@ -1,3 +1,18 @@
+# Release 2.8.2
+
+### Bugs fixed
+* None
+
+### Enhancements
+* The server periodically logs the number of open files and their file type.
+* The proxy logs the number of open connections to the sync server.
+* Added the ability to specify a custom Authorization header name for incoming HTTP requests.
+* Add retry logic when internally accessing services in case some services are behind
+  a proprietary HTTP proxy that doesn't start proxying incoming requests right away.
+* Added an overwrite option for the backup to specify that the destination
+  directory may be overwritten
+
+
 # Release 3.1.0
 
 ### Bugs fixed
