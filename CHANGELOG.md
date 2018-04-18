@@ -1,3 +1,12 @@
+# Release 3.1.2-beta.1
+
+### Bugs fixed
+* Fixed a bug that caused an invalid provider configuration to prevent ROS from initializing.
+
+### Enhancements
+* None
+
+
 # Release 3.1.1
 
 ### Bugs fixed
