@@ -1,3 +1,12 @@
+# Release 3.1.2
+
+### Bugs fixed
+* None
+
+### Enhancements
+* None
+
+
 # Release 3.1.2-beta.1
 
 ### Bugs fixed
