@@ -1,3 +1,12 @@
+# Release 3.1.3
+
+### Bugs fixed
+* RealmFactory will now force close Realms on user deletion.
+
+### Enhancements
+* None
+
+
 # Release 3.1.2
 
 ### Bugs fixed
