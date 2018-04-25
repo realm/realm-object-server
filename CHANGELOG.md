@@ -1,3 +1,12 @@
+# Release 3.1.7
+
+### Bugs fixed
+* None
+
+### Enhancements
+* None
+
+
 # Release 3.1.6
 
 ### Bugs fixed
