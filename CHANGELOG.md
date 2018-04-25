@@ -1,3 +1,12 @@
+# Release 3.1.6
+
+### Bugs fixed
+* Uses realm-sync 3.1.1, which fixes statsd output
+
+### Enhancements
+* None
+
+
 # Release 3.1.5
 
 ### Bugs fixed
