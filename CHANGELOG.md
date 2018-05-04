@@ -1,3 +1,15 @@
+# Release 3.3.0
+
+### Bugs fixed
+* None
+
+### Enhancements
+* Expose API to enable admin users to convert between Realm types (`PATCH realms/files/:path`).
+* Throw a more meaningful error when attempting to open a Realm with the incorrect type.
+* Include the ROS version in the `/health` response.
+* Uses realm-sync-server 3.3.0
+
+
 # Release 3.1.8
 
 ### Bugs fixed
