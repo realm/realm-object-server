@@ -1,3 +1,12 @@
+# Release 3.4.0
+
+### Bugs fixed
+* Make sure node.js server addresses have type AddressInfo.
+
+### Enhancements
+* None
+
+
 # Release 3.3.0
 
 ### Bugs fixed
