@@ -1,3 +1,12 @@
+# Release 3.4.2
+
+### Bugs fixed
+* None
+
+### Enhancements
+* KubernetesSyncWorker can now operate without synchronous backup when run with a single replica
+
+
 # Release 3.4.1
 
 ### Bugs fixed
