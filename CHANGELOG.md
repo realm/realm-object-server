@@ -1,3 +1,13 @@
+# Release 3.4.3
+
+### Bugs fixed
+* Fixed a bug that caused Realm files created with legacy ROS versions to be inaccessible for non-admin users.
+* Kubernetes API requests will be retried when they receive HTTP status code 429 (Too many requests)
+
+### Enhancements
+* None
+
+
 # Release 3.4.2
 
 ### Bugs fixed
