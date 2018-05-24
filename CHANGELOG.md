@@ -1,3 +1,13 @@
+# Release 3.4.4
+
+### Bugs fixed
+* KubernetesSyncWorker: Adds a workaround for a bug in kube-router, which can
+cause intermittent connection failures to sync workers.
+
+### Enhancements
+* None
+
+
 # Release 3.4.3
 
 ### Bugs fixed
