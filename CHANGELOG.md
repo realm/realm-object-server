@@ -1,3 +1,12 @@
+# Release 3.4.5
+
+### Bugs fixed
+* Ensures that all system realms use the "default" sync label in order to avoid race conditions on startup
+
+### Enhancements
+* None
+
+
 # Release 3.4.4
 
 ### Bugs fixed
