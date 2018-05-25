@@ -1,3 +1,12 @@
+# Release 3.5.1
+
+### Bugs fixed
+* Exposed API for setting the feature token.
+
+### Enhancements
+* None
+
+
 # Release 3.5.0
 
 ### Bugs fixed
