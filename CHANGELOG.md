@@ -1,3 +1,14 @@
+# Release 3.5.0
+
+### Bugs fixed
+* None
+
+### Enhancements
+* The developer edition has been disabled. A feature token must be
+  supplied to use the server.
+* Backup has been enabled for partial sync.
+
+
 # Release 3.4.5
 
 ### Bugs fixed
