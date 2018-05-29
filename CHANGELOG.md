@@ -1,3 +1,13 @@
+# Release 3.5.2
+
+### Bugs fixed
+* Fixes an error being reported about WildcardPermissionsRealm missing on bootup.
+* Fixes an issue that could make the server unresponsive after deleting Realms or users.
+
+### Enhancements
+* Added option for enableDownloadLogCompaction in KubernetesSyncWorker
+
+
 # Release 3.5.1
 
 ### Bugs fixed
