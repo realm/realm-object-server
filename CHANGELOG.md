@@ -1,3 +1,14 @@
+# Release 3.6.0
+
+### Bugs fixed
+* Don't keep the default Realm open for the duration of running the server.
+
+### Enhancements
+* The SyncService will always emit sync worker stats to the server's stats sink now.
+* Expose `PrometheusStatsSink` on the `stats` export for easier importing.
+* If `BasicServer` doesn't finish starting in a set time crash the process.
+
+
 # Release 3.5.2
 
 ### Bugs fixed
