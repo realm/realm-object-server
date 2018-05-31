@@ -1,3 +1,12 @@
+# Release 3.6.1
+
+### Bugs fixed
+* None
+
+### Enhancements
+* None
+
+
 # Release 3.6.0
 
 ### Bugs fixed
