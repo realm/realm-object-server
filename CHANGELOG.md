@@ -1,3 +1,12 @@
+# Release 3.6.4
+
+### Bugs fixed
+* KubernetesSyncWorker: add delay between endpoints updates to work around an issue in kube-router
+
+### Enhancements
+* None
+
+
 # Release 3.6.3
 
 ### Bugs fixed
