@@ -1,3 +1,13 @@
+# Release 3.6.5
+
+### Bugs fixed
+* `RealmDirectoryService` will initialize the Default Realm only once. This prevents extensively long ROS startup times
+when the default Realm contains a lot of data.
+
+### Enhancements
+* None
+
+
 # Release 3.6.4
 
 ### Bugs fixed
