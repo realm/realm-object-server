@@ -1,3 +1,16 @@
+# Release 3.6.6
+
+### Bugs fixed
+* None
+
+### Enhancements
+* Exposed history log compaction configuration options. The BasicServer config object now has `historyTtl`
+property to configure the time after which history entries will expire and be eligible for compaction (default
+is infinite). The `SyncService` configuration object has that as well as `historyCompactionInterval` (to control
+at what intervals the compaction algorithm will be run, default 3600) and `enableLogCompaction` (to disable the
+algorithm altogether, default is enabled).
+
+
 # Release 3.6.5
 
 ### Bugs fixed
