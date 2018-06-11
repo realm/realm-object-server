@@ -1,3 +1,12 @@
+# Release 3.6.7
+
+### Bugs fixed
+* Fixed an issue that would cause the `@Next` annotation to pass in an invalid argument.
+
+### Enhancements
+* None
+
+
 # Release 3.6.6
 
 ### Bugs fixed
