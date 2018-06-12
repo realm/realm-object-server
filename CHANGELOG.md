@@ -1,3 +1,13 @@
+# Release 3.6.8
+
+### Bugs fixed
+* Not supplying `baseUrl` in the `BasicEmailHandlerConfig` will no longer result in an exception being thrown.
+* Fixed a problem which would sometimes cause `bad permission object` and `bad changeset errors`.
+
+### Enhancements
+* None
+
+
 # Release 3.6.7
 
 ### Bugs fixed
