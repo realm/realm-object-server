@@ -1,3 +1,12 @@
+# Release 3.6.9
+
+### Bugs fixed
+* Fix `404 Not Found: realm-sync-server` errors when installing.
+
+### Enhancements
+* None
+
+
 # Release 3.6.8
 
 ### Bugs fixed
