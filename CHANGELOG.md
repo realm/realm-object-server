@@ -1,3 +1,12 @@
+# Release 3.6.10
+
+### Bugs fixed
+* The server will now proactively crash on client reset rather than go into a non-deterministic state.
+
+### Enhancements
+* None
+
+
 # Release 3.6.9
 
 ### Bugs fixed
