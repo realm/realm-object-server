@@ -1,3 +1,13 @@
+# Release 3.6.11
+
+### Bugs fixed
+* Fixes an unhandled promise rejection in kubernetes/ResourceWatcher
+* Adds delay to reconnection attempts in kubernetes/ResourceWatcher
+
+### Enhancements
+* None
+
+
 # Release 3.6.10
 
 ### Bugs fixed
