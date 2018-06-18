@@ -1,3 +1,12 @@
+# Release 3.6.12
+
+### Bugs fixed
+* Fixed a bug that could result in a crash with the message "bad changeset error".
+
+### Enhancements
+* None
+
+
 # Release 3.6.11
 
 ### Bugs fixed
