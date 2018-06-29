@@ -1,3 +1,12 @@
+# Release 3.8.1
+
+### Bugs fixed
+* The PermissionsService will wait for the wildcard permissions Realms to be created.
+
+### Enhancements
+* Exclude internal traffic (e.g. ROS-to-ROS or health checks on Cloud) from traffic metrics.
+
+
 # Release 3.8.0
 
 ### Bugs fixed
