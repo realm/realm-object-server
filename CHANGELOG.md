@@ -1,3 +1,26 @@
+# Release 3.9.0
+
+### Enhancements
+* Added an optional `allowAnonymous` argument to route decorators. If not specified on the route level,
+  the service-level value will be used. To specify it for individual route, use the following syntax:
+
+  ```ts
+  @Get("/some-path", /* allowAnonymous */ true)
+  public unauthorizedFunction() {}
+  ```
+
+  The route-level value, if specified, will override the service-level value. To specify it at the service level,
+  use the following syntax:
+
+  ```ts
+  @BaseRoute("/my-service", /* allowAnonymous */ false)
+  export class MyUnauthorizedService {}
+  ```
+
+  The default value for the service decorator is `true`, meaning ROS will not enforce authorization requirements by
+  default.
+
+
 # Release 3.8.5
 
 ### Bugs fixed
