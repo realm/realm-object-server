@@ -1,3 +1,18 @@
+# Release 3.9.2
+
+### Bugs fixed
+* None
+
+### Enhancements
+* Added two parameters - `shouldCompactRealmsAtStart` and `shouldPerformPartialSyncAtStart`
+  that control whether the server will compact the Realms and do a complete partial sync
+  during initialization. Compacting the Realms may reduce the disk space they use, while
+  performing partial sync will detect inconsistencies in the partial Realms and correct them
+  at the cost of incurring a client reset for the clients that used to synchronize against
+  an inconsistent Realm. It is recommended that they are set to `false` (or left undefined)
+  unless you are experiencing Bad Changeset errors or excessive disk usage.
+
+
 # Release 3.6.5-1
 
 ### Bugs fixed
