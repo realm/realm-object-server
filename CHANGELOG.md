@@ -1,3 +1,15 @@
+# Release 3.9.3
+
+### Bugs fixed
+* ROS will no longer initialize new projects with the latest version of ROS by default.
+Instead, it will use the version of the globally installed package. If you want to initialize
+a project with the latest version of ROS, you can use `ros init my-project --latest`.
+
+### Enhancements
+* Allow `ros init` to be run without an argument from an empty folder. In this case, it will
+initialize the project in the current folder.
+
+
 # Release 3.6.5-2
 
 ### Bugs fixed
