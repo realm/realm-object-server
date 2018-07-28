@@ -1,3 +1,19 @@
+# Release 3.9.4
+
+### Bugs fixed
+* None
+
+### Enhancements
+* ROS can now be started with an option (--realm-size-reporting when started on the CLI and `enableRealmSizeReporting`
+  when starting the server programatically) to periodically (currently every 30 minutes) emit stats about the size of
+  the data of realms stored on the server. These can be read by admin users via a new `/stats/{metricName}` HTTP
+  endpoint.
+* Update to Sync 3.8.4.
+  * Improved the average memory usage during merge.
+  * Fixed another memory bug related to stray iterators while iterating in the merge algorithm, which could lead to memory corruption, changeset corruption, and crash the server/client.
+  * Optimized ChangesetIndex when merging changesets that mention a large number of objects.
+
+
 # Release 3.9.3
 
 ### Bugs fixed
