@@ -1,3 +1,13 @@
+# Release 3.9.5
+
+### Bugs fixed
+* Updated to Sync 3.8.5
+  * Fixed a bug that would result in the server crashing with `std::bad_alloc` in the error message.
+
+### Enhancements
+* None
+
+
 # Release 3.9.4
 
 ### Bugs fixed
