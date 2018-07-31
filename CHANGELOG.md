@@ -1,3 +1,13 @@
+# Release 3.9.8
+
+### Bugs fixed
+* The StandaloneStats (used when running ROS in the single-process mode) was not checking label names correctly.
+* ROS would crash if receiving a stat with an unexpected "path" label for the newly added realm_state_size metric.
+
+### Enhancements
+* None
+
+
 # Release 3.9.7
 
 ### Bugs fixed
