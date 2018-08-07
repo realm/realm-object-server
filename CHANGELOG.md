@@ -1,3 +1,15 @@
+# Release 3.9.10-alpha.1
+
+### Bugs fixed
+* Fixed a failure in the `PrometheusStatsStorage` where url creation threw an error when running on Node.js v6.
+
+### Enhancements
+* The server can now be started with a `StatsdStatsSink` as `StatsSink`.
+  When doing this any statistics captured by the server and its sync workers will be send as UDP packets to a predefined
+  UDP socket. This enables a better integration into environments where statistics are aggregated via StatsD.
+* [Sync] Added more logging around the detection of invalid partial realms about to be renamed as "inconsistent". The error causing the inconsistency was previously swallowed.
+
+
 # Release 3.9.9
 
 ### Bugs fixed
