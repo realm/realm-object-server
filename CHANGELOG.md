@@ -1,3 +1,12 @@
+# Release 3.9.11
+
+### Bugs fixed
+* [Sync] Fixed a bug with with the server bootup consistency checker.
+
+### Enhancements
+* None
+
+
 # Release 3.9.10
 
 ### Bugs fixed
