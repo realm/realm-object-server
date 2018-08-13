@@ -1,3 +1,12 @@
+# Release 3.9.12-alpha.1
+
+### Bugs fixed
+* None
+
+### Enhancements
+* Improved logging around fatal sync worker errors.
+
+
 # Release 3.9.11
 
 ### Bugs fixed
