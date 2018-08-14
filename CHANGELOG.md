@@ -1,3 +1,12 @@
+# Release 3.9.12-debug
+
+### Bugs fixed
+* None
+
+### Enhancements
+* None
+
+
 # Release 3.9.12-alpha.1
 
 ### Bugs fixed
