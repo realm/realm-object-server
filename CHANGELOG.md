@@ -1,3 +1,12 @@
+# Release 3.9.12
+
+### Bugs fixed
+* None
+
+### Enhancements
+* Added `startedAt` property to KubernetesSyncWorker
+
+
 # Release 3.9.12-debug
 
 ### Bugs fixed
