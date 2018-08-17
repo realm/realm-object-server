@@ -1,3 +1,12 @@
+# Release 3.9.13
+
+### Bugs fixed
+* None
+
+### Enhancements
+* Added `enableDebugMode` option to KubernetesSyncWorker
+
+
 # Release 3.9.12
 
 ### Bugs fixed
