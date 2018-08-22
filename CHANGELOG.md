@@ -1,3 +1,12 @@
+# Release 3.10.0-alpha
+
+### Bugs fixed
+* None
+
+### Enhancements
+* Uses sync 3.9.1, which introduces mulithreaded networking
+
+
 # Release 3.9.13
 
 ### Bugs fixed
