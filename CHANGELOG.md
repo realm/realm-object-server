@@ -4,7 +4,9 @@
 * None
 
 ### Enhancements
-* None
+* When the server is configured for HTTPS, its internal components
+  will communicate over HTTPS in both single-node and multi-node
+  deployments.
 
 
 # Release 3.10.0-alpha.1
