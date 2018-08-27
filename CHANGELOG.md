@@ -1,3 +1,33 @@
+# Release 3.10.0-alpha.3 (2018-08-27)
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* None
+
+### Enhancements
+* Refactored the internals of KubernetesSyncWorker to be a bit more
+  straightforward. Each evaulation of the endpoints object will result
+  in a new sync server configuration. This configuration is compared to the
+  current one in order to determine if the server should be restarted.
+* Configuration options can be read from the endpoints object's annotations
+  when they are not overridden by the constructor. These options are:
+  * `sync.realm.io/log-level` (string)
+  * `sync.realm.io/enable-download-log-compaction` (boolean)
+  * `sync.realm.io/max-download-size` (integer)
+  * `sync.realm.io/enable-debug-mode` (boolean)
+  * `sync.realm.io/history-ttl` (integer)
+  * `sync.realm.io/history-compaction-interval` (integer)
+
+### Installation & rollback instructions
+Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions. 
+
+### Notable known issues
+* None
+
+
 # Release 3.9.17 (2018-08-24)
 
 
