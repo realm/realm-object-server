@@ -1,3 +1,23 @@
+# Release 3.10.0 (2018-08-28)
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* None
+
+### Enhancements
+* The sync worker has been upgraded to a multithreaded architecture. It now has two major internal threads, a networking event loop thread, and one worker thread for performing potentially long-running tasks. This improves the responsiveness of the server while executing larger queries.
+* The sync worker now uses an adaptive scheme for caching and reusing query results, which improves query time and decreases load on the server.
+
+### Installation & rollback instructions
+Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions. 
+
+### Notable known issues
+* None
+
+
 # Release 3.10.0-alpha.3 (2018-08-27)
 
 
