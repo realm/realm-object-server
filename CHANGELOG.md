@@ -1,3 +1,23 @@
+# Release 3.10.1 (2018-08-29)
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* Adding a table and creating a subscription for it without having permissions to create the table could result in a `CrossTableLinkTarget` exception being thrown by Core.
+* Outward partial sync was fixed to handle the case where temporary link targets have been previously deleted in the reference Realm. This bug could lead to crashes and error messages of type `index out of range` or an assertion of the form `ndx < m_size`. This bug could explain many of the `index out of range` crashes that have been seen. This bug has not led to bad changesets being generated, which means that there should be no remnants of the bug in existing Realms.
+
+### Enhancements
+* None
+
+### Installation & rollback instructions
+Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* None
+
+
 # Release 3.10.0 (2018-08-28)
 
 
