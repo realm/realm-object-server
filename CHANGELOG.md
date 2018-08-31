@@ -1,3 +1,22 @@
+# Release 3.10.2 (2018-08-31)
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* Fixed the consistency checker such that it does not crash on empty partial Realms.
+
+### Enhancements
+* None
+
+### Installation & rollback instructions
+Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions. 
+
+### Notable known issues
+* None
+
+
 # Release 3.10.1 (2018-08-29)
 
 
