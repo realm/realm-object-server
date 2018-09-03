@@ -1,3 +1,23 @@
+# Release 3.10.3 (2018-09-03)
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* None
+
+### Enhancements
+* The server can now encrypt its realms with an encryption key passed in the `realmsEncryptionKey` configuration property.
+
+### Installation & rollback instructions
+**WARNING**: A server with encrypted realms cannot be rolled back to an older version!
+Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+
+
 # Release 3.10.2 (2018-08-31)
 
 

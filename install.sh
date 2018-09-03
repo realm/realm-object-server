@@ -97,7 +97,7 @@ if [ "${nvm_installed}" = "1" ]; then
 !!!! NOTICE !!!!
 
 We have installed NVM, The NodeJS Version Manager for you. In order to continue, you will
-need to inject NVM into your current shell.  You do so by running:
+need to inject NVM into your current shell.  You do do so by running:
 
     export NVM_DIR="$HOME/.nvm"
     . "$NVM_DIR/nvm.sh"  # This loads nvm
