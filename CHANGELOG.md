@@ -1,3 +1,25 @@
+# Release 3.10.4 (2018-09-06)
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* Fixed a bug that could cause the server to preemptively terminate when a user (and their Realms) is deleted. This may have
+been experienced by observing messages like: `Client reset occurred for Realm at path /some-path/__perm. Shutting down preemptively`
+in the server logs. Issue reference: https://github.com/realm/realm-object-server-private/issues/1199. The issue has been
+present since version 2.0.
+
+### Enhancements
+* None
+
+### Installation & rollback instructions
+Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* None
+
+
 # Release 3.10.3 (2018-09-03)
 
 
