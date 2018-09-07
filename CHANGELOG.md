@@ -1,3 +1,22 @@
+# Release 3.10.5 (2018-09-07)
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* None
+
+### Enhancements
+* None
+
+### Installation & rollback instructions
+Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions. 
+
+### Notable known issues
+* None
+
+
 # Release 3.10.4 (2018-09-06)
 
 ### Breaking changes
