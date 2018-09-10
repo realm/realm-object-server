@@ -1,3 +1,28 @@
+# Release 3.10.6 (2018-09-11)
+
+
+### Breaking changes
+* The function `loadFeatureToken` has been removed. It has had no effect and has been deprecated since version 3.0.
+
+### Bugs fixed
+* 3.10.0 introduced a change that forced ROS components to communicate over HTTPS when ROS itself was configured for HTTPS.
+  However, on single-node deployments this caused communication to fail with hostname validation errors when the used SSL
+  certificate was not valid over the loopback interface or `listenAddress` did not match the DNS name in the certificate.
+  The fix is to not enable HTTPS communication between components by default. This feature is now enabled by setting the
+  `httpsForInternalComponents` configuration option to `true` instead.
+* Fixed a crash with sync client HTTP requests with a malformed `Content-Length` header. Such will now correctly result in
+  responses with status code 400.
+
+### Enhancements
+* None
+
+### Installation & rollback instructions
+Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* None
+
+
 # Release 3.10.3 (2018-09-03)
 
 ### Breaking changes
