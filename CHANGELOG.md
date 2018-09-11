@@ -1,3 +1,30 @@
+# Release 3.10.7 (2018-09-11)
+
+
+### Breaking changes
+* None
+
+### Bugs fixed
+* Removed some redundant retry logic in the internal HTTP clients that could cause up to 6 seconds delay in responding to
+some HTTP requests.
+* Fixed a bug that could cause the server to preemptively terminate when a user (and their Realms) is deleted. This may have
+been experienced by observing messages like: `Client reset occurred for Realm at path /some-path/__perm. Shutting down preemptively`
+in the server logs. Issue reference: https://github.com/realm/realm-object-server-private/issues/1199. The issue has been
+present since version 2.0.
+
+### Enhancements
+* None
+
+### Installation & rollback instructions
+Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Clients that never write to a Realm but connect to it often (e.g. a scenario where a single producer publishes updates to many read-only clients) will prevent the history compaction algorithm from ever compacting this Realm's history. A workaround is to have them write a dummy update every once in a while with frequency of a magnitude similar to the history time to live value. For example, if the history time to live is set to 30 days, read-only clients can be modified to write a dummy value every day. Then you'll have at most 31 days of uncompacted history. A fix will be released soon.
+* If a single transaction is larger than 4 GB, the server can crash.
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.10.6 (2018-09-11)
 
 
