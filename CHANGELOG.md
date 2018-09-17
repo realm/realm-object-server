@@ -1,3 +1,30 @@
+# Release 3.11.0 (2018-09-17)
+
+
+### Fixed
+* Fixed a bug with query-based sync where when performing a query that would return a very large (>4 GB) resultset the server could crash with `std::runtime_error("Compression error")`. This issue has been present since Realm Object Server 3.0.
+* Crashes related to changeset processing when using query-based sync have been fixed.
+
+### Enhancements
+* Clients using protocol version >=25 now always report download progress to the server, not only when they make writes. This allows the server to do history compaction much more aggressively, especially when there are many clients that rarely or never make writes. The server considers doing history compaction when an actual change is uploaded to the server. (Issue [#127](https://github.com/realm/realm-object-server/issues/127)
+
+### Breaking changes
+* None
+
+### Compatibility
+**NOTE:**
+While the server is backwards-compatible with clients using protocol version 24 or below, clients at version 25 are not backwards-compatible with a server at protocol version 24. So the server must be upgraded to this version before any clients are upgraded.
+
+See more about which SDK version supports sync protocol 25 here: [Version Compatibility for ROS 3.x](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions. 
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.10.7 (2018-09-11)
 
 
