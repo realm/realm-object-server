@@ -1,3 +1,25 @@
+# Release 3.11.3 (2018-10-03)
+
+
+### Enhancements
+* None
+
+### Fixed
+* Fixed an issue were statsd metrics from the syncWorker were not being picked up by ROS. The issue could be observed when the hostname
+  of the system was fully-qualified, e.g., "sync.example.com".
+
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* REMEMBER TO COPY FROM PREVIOUS RELEASE!
+
+
 # Release 3.11.0 (2018-09-17)
 
 
