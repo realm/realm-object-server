@@ -1,3 +1,26 @@
+# Release 3.11.5 (2018-10-04)
+
+
+### Enhancements
+* Performance improved when merging changes on the server.
+* Reduced file size of server side realms.
+
+### Fixed
+* A bug was fixed where load-balanced installations would not properly place partial Realms on the same sync worker as its reference realm.
+
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.11.4 (2018-10-03)
 
 
