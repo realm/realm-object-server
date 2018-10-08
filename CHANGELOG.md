@@ -1,14 +1,11 @@
 # Release 3.11.6 (2018-10-05)
 
-
 ### Enhancements
 * The implementation of the merge algorithm has been made more efficient.
 * New StatsD metric <prefix>.precheck_time (timing) emitted on completion of the server file prechecking process. It is the time taken, in milliseconds, by that prechecking process.
 
 ### Fixed
-* <How could the end user observe the bug?> <What was the consequense?> (Issue [#???](?url?), since v?.?.?).
 * None
-
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -24,14 +21,12 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 
 # Release 3.11.5 (2018-10-04)
 
-
 ### Enhancements
 * Performance improved when merging changes on the server.
 * Reduced file size of server side realms.
 
 ### Fixed
 * A bug was fixed where load-balanced installations would not properly place partial Realms on the same sync worker as its reference realm.
-
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -47,13 +42,11 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 
 # Release 3.11.4 (2018-10-03)
 
-
 ### Enhancements
 * Improved performance of the sync server partial sync precheck.
 
 ### Fixed
 * None
-
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -68,14 +61,12 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 
 # Release 3.11.3 (2018-10-03)
 
-
 ### Enhancements
 * None
 
 ### Fixed
 * Fixed an issue were statsd metrics from the syncWorker were not being picked up by ROS. The issue could be observed when the hostname
   of the system was fully-qualified, e.g., "sync.example.com".
-
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -85,11 +76,11 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
 
 ### Notable known issues
-* REMEMBER TO COPY FROM PREVIOUS RELEASE!
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
 
 
 # Release 3.11.0 (2018-09-17)
-
 
 ### Fixed
 * Fixed a bug with query-based sync where when performing a query that would return a very large (>4 GB) resultset the server could crash with `std::runtime_error("Compression error")`. This issue has been present since Realm Object Server 3.0.
@@ -117,7 +108,6 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 
 # Release 3.10.7 (2018-09-11)
 
-
 ### Breaking changes
 * None
 
@@ -143,7 +133,6 @@ Please see https://docs.realm.io/platform/self-hosted/installation for installat
 
 
 # Release 3.10.6 (2018-09-11)
-
 
 ### Breaking changes
 * The function `loadFeatureToken` has been removed. It has had no effect and has been deprecated since version 3.0.
