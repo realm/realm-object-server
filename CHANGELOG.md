@@ -1,3 +1,34 @@
+# Release 3.11.7 (2018-10-10)
+
+
+### Enhancements
+* Some adjustments were made in the configuration of Prometheus Metrics:
+  * Ensure that recently-added metrics are named with `ros_sync_` prefix
+  * Adjusted bucket intervals for `ros_sync_precheck_time_ms` to more appropriate values, ranging from 1s to 16m
+* The sync server logs the maximum number of open files on start-up.
+* The sync server node wrapper logs an error message on catching a fatal error and sleeps for two seconds to increase    the chance that the log message is emitted before the process aborts.
+* Added maxOpenFiles to the typescript sync server configuration.
+
+### Fixed
+* The server is now able to handle recreating users with the same id (e.g. by using the JWT provider).
+This was previously not supported and would have resulted in receiving a message like
+`Client reset occurred for Realm at path ***. Shutting down preemptively` followed by a server
+shutdown. (Issue [#1255](https://github.com/realm/realm-object-server-private/issues/1255), since v2.0)
+* The default action of the sync server node wrapper on an uncaught exception is to abort instead of exit(1).
+
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.11.6 (2018-10-05)
 
 ### Enhancements
