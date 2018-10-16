@@ -1,3 +1,26 @@
+# Release 3.11.9 (2018-10-16)
+
+
+### Enhancements
+* Various log messages, that are emitted by the server when the access token has expired, are now emitted at detail level, rather than at error level. Since it is impossible to avoid all such cases, they should not be considered as errors (https://github.com/realm/realm-sync/issues/2455).
+* Extended typescript definition for IRealmSyncServerConfiguration to accept the skipVerifyRealmsAtStart option, which defaults to false when omitted.
+
+### Fixed
+* Metric <prefix>.authentication.failed was sometimes incremented twice where it should only have been incremented once (https://github.com/realm/realm-sync/issues/2455).
+
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.11.8 (2018-10-15)
 
 
