@@ -1,3 +1,24 @@
+# Release 3.12.0 (2018-10-17)
+
+
+### Enhancements
+* Enabled user impersonation when opening Realms on the server. You can now open a Realm with a particular user rather than the admin user. This can be useful when opening partial Realms as object-level permissions are not applied to admin users. ([#1295](https://github.com/realm/realm-object-server-private/pull/1295))
+
+### Fixed
+* None
+
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* REMEMBER TO COPY FROM PREVIOUS RELEASE!
+
+
 # Release 3.11.9 (2018-10-16)
 
 
