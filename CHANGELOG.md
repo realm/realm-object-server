@@ -1,3 +1,25 @@
+# Release 3.12.2 (2018-10-18)
+
+
+### Enhancements
+* Added `syncServiceConfigOverride` callback to `BasicServer`'s start params to allow customizing the default values for the sync service config properties without having to add all services manually. ([#1303](https://github.com/realm/realm-object-server-private/pull/1303))
+
+### Fixed
+* Added ability to override `enableRealmStateSizeReporting` setting to `false` using an endpoints annotation.
+
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.12.1 (2018-10-17)
 
 
