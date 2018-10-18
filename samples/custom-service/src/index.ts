@@ -54,7 +54,6 @@ class ProductService {
     }
 }
 
-
 const server = new BasicServer()
 
 // add it to the server
@@ -63,13 +62,12 @@ server.addService(new ProductService())
 const start = async () => {
     try {
         await server.start({
-            // This is the location where ROS will store its runtime data
             dataPath: path.join(__dirname, '../data'),
             featureToken: "<YOUR-FEATURE-TOKEN>",
-            // register the auth provider
         });
         console.log(`Realm Object Server was started on ${server.address}`)
-        // Lets call the JSON and endpoint!
+
+        // Lets call the custom endpoint!
         const response = await get(`http://${server.address}/products`)
         console.log(`We made a call to our JSON endpoint /products`)
         console.log('It looks like', response.body)

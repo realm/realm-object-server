@@ -12,6 +12,6 @@
         "typescript": "2.5.3"
     },
     "dependencies": {
-        "realm-object-server": "2.0.16"
+        "realm-object-server": "^3.12.1"
     }
 }

@@ -1,7 +1,7 @@
 import { BasicServer, auth, errors, User } from 'realm-object-server'
 import * as Realm from 'realm'
 import * as path from 'path'
-import { login } from './fake-company-login' // this is just some fake 
+import { login } from './fake-company-login' // this is just some fake
 
 const server = new BasicServer()
 
@@ -21,7 +21,7 @@ class MyCustomAuth extends auth.AuthProvider {
 
             return this.service.createOrUpdateUser(
                 response.userId, // this is your company's way of identifying your userId
-                this.name, // this should always be set to this.name 
+                this.name, // this should always be set to this.name
                 response.isAdmin, { // add some meta data to this user
                     departmentId: response.departmentId,
                     email: response.email
@@ -33,13 +33,16 @@ class MyCustomAuth extends auth.AuthProvider {
 
 }
 
-server.start({
-    // This is the location where ROS will store its runtime data
-    dataPath: path.join(__dirname, '../data'),
-    // register the auth provider
-    authProviders: [new MyCustomAuth()]
-})
-    .then(() => {
+const start = async () => {
+    try {
+        await server.start({
+            // This is the location where ROS will store its runtime data
+            dataPath: path.join(__dirname, '../data'),
+            // register the auth provider
+            authProviders: [new MyCustomAuth()],
+            featureToken: "<YOUR-FEATURE-TOKEN>",
+        })
+
         console.log(`Realm Object Server was started on ${server.address}`)
 
         // the server has started now! let's post some json data up
@@ -52,15 +55,16 @@ server.start({
             departmentId: 'sales'
         }
 
-        return Realm.Sync.User.registerWithProvider(`http://${server.address}`, { 
-            provider: 'mycustomauth', // make sure this matches your MyCustomAuth.name so that the request is mapped to the correct authentication provider
-            providerToken: null, // you don't have to worry about this. 
-            userInfo: customLoginPayload // this is your custom payload
-        })
-    })
-    .then(customAuthenticatedUser => {
-        console.log(`Congratulations! You've logged in successfully! You Realm Sync UserId is ${customAuthenticatedUser.identity}`)
-    })
-    .catch(err => {
+        const credentials = Realm.Sync.Credentials.custom(
+            'mycustomauth', // make sure this matches your MyCustomAuth.name so that the request is mapped to the correct authentication provider
+            '', // you don't have to worry about this.
+            customLoginPayload) // this is your custom payload
+
+        const user = await Realm.Sync.User.login(`http://${server.address}`, credentials);
+        console.log(`Congratulations! You've logged in successfully! You Realm Sync UserId is ${user.identity}`)
+    } catch (err) {
         console.error(`Error starting Realm Object Server: ${err.message}`)
-    })
+    }
+}
+
+start();

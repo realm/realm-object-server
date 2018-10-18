@@ -16,17 +16,22 @@ async function bootstrapUsers(server: BasicServer){
     }
 }
 
-server.start({
-        // This is the location where ROS will store its runtime data
-        dataPath: path.join(__dirname, '../data')
-    })
-    .then(() => {
+const start = async () => {
+    try {
+        await server.start({
+            // This is the location where ROS will store its runtime data
+            dataPath: path.join(__dirname, '../data'),
+            featureToken: "<YOUR-FEATURE-TOKEN>",
+        })
+
         console.log(`Realm Object Server was started on ${server.address}`)
-        return bootstrapUsers(server)
-    })
-    .then(() => {
+
+        await  bootstrapUsers(server)
+
         console.log('Now you have multiple users!')
-    })
-    .catch(err => {
+    } catch (err) {
         console.error(`Error starting Realm Object Server: ${err.message}`)
-    })
+    }
+}
+
+start();
