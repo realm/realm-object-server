@@ -1,6 +1,6 @@
-import { 
-    BasicServer, 
-    BaseRoute, 
+import {
+    BasicServer,
+    BaseRoute,
     Get,
     ServerStarted,
     Server
@@ -27,11 +27,11 @@ class ProductService {
 
     @ServerStarted()
     async serverStarted(server: Server) {
-        this.productsRealm = await server.realmFactory.open({
+        this.productsRealm = await server.openRealm({
             remotePath: '/products',
             schema: [ProductSchema]
         })
-        // let's add a 100 random products
+        // let's add 100 random products
         this.productsRealm.write(() => {
             for (let index = 0; index < 100; index++) {
                 this.productsRealm.create('Product', {
@@ -52,7 +52,6 @@ class ProductService {
             .slice() // turn it into a snapshot with slice. This is VERY important
         return allProducts
     }
-
 }
 
 
@@ -61,20 +60,23 @@ const server = new BasicServer()
 // add it to the server
 server.addService(new ProductService())
 
-server.start({
-    // This is the location where ROS will store its runtime data
-    dataPath: path.join(__dirname, '../data'),
-    // register the auth provider
-})
-    .then(() => {
+const start = async () => {
+    try {
+        await server.start({
+            // This is the location where ROS will store its runtime data
+            dataPath: path.join(__dirname, '../data'),
+            featureToken: "<YOUR-FEATURE-TOKEN>",
+            // register the auth provider
+        });
         console.log(`Realm Object Server was started on ${server.address}`)
-        // Lets call the JSON and endpoint! 
-        return get(`http://${server.address}/products`)
-    })
-    .then(response => {
+        // Lets call the JSON and endpoint!
+        const response = await get(`http://${server.address}/products`)
         console.log(`We made a call to our JSON endpoint /products`)
         console.log('It looks like', response.body)
-    })
-    .catch(err => {
+
+    } catch (err) {
         console.error(`Error starting Realm Object Server: ${err.message}`)
-    })
+    }
+}
+
+start();
