@@ -1,19 +1,10 @@
 # Release 3.12.4 (2018-10-25)
 
-
-### Enhancements
-* Allow for the triggering of Realm state size reporting in the server to be specified as a time of day (number of milliseconds after midnight UTC).
-* When the server is launched via the Node.js API, the default action during Realm state size recomputation and reporting is to skip files that are not already open in the LRU file access cache of the worker thread.
-* The synchronization server now logs client information for every initiated session, including the user agent description.
-* Synchronization protocol no longer allows for user identity to be changed during a session.
-* Log messages about Realm files being opened and closed by the LRU cache on the client side have been demoted from detail to debug level.
-* Log messages for "Scheduling Compaction ..." demoted from info to detail.
-* Log messages for details about slow computations demoted from warn to debug.
-* Added support to the server for blacklisting of client files. Client file blacklists are loaded from `<root>/client_file_blacklists` when the server is started. See [Client file blacklisting](https://github.com/realm/realm-sync/blob/develop/doc/blacklisting.md) for further details.
+### Enhancements 
+* Reduced verbosity of some log messages.
 
 ### Fixed
 * A bug in log compaction of link lists was fixed. This bug would lead to errors of the type "index out of range" or "ndx < size()".
-
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -26,9 +17,15 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 * Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
 * Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
 
+### Internals
+* Upgraded to realm-sync 3.12.10 (including core 5.11.3)
+* Added support to the server for blacklisting of client files. Client file blacklists are loaded from `<root>/client_file_blacklists` when the server is started. See [Client file blacklisting](https://github.com/realm/realm-sync/blob/develop/doc/blacklisting.md) for further details.
+* Allow for the triggering of Realm state size reporting in the server to be specified as a time of day (number of milliseconds after midnight UTC).
+* When the server is launched via the Node.js API, the default action during Realm state size recomputation and reporting is to skip files that are not already open in the LRU file access cache of the worker thread.
+* The synchronization server now logs client information for every initiated session, including the user agent description.
+
 
 # Release 3.12.2 (2018-10-18)
-
 
 ### Enhancements
 * Added `syncServiceConfigOverride` callback to `BasicServer`'s start params to allow customizing the default values for the sync service config properties without having to add all services manually. ([#1303](https://github.com/realm/realm-object-server-private/pull/1303))
