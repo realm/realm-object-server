@@ -17,13 +17,6 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 * Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
 * Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
 
-### Internals
-* Upgraded to realm-sync 3.12.10 (including core 5.11.3)
-* Added support to the server for blacklisting of client files. Client file blacklists are loaded from `<root>/client_file_blacklists` when the server is started. See [Client file blacklisting](https://github.com/realm/realm-sync/blob/develop/doc/blacklisting.md) for further details.
-* Allow for the triggering of Realm state size reporting in the server to be specified as a time of day (number of milliseconds after midnight UTC).
-* When the server is launched via the Node.js API, the default action during Realm state size recomputation and reporting is to skip files that are not already open in the LRU file access cache of the worker thread.
-* The synchronization server now logs client information for every initiated session, including the user agent description.
-
 
 # Release 3.12.2 (2018-10-18)
 
@@ -32,7 +25,6 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 
 ### Fixed
 * Added ability to override `enableRealmStateSizeReporting` setting to `false` using an endpoints annotation.
-
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -48,13 +40,11 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 
 # Release 3.12.1 (2018-10-17)
 
-
 ### Enhancements
 * The vacuum command is enhanced to take options history-type and bump-realm-version.
 
 ### Fixed
 * Avoid crashing the server when compaction is requested for a file whose history type is not yet set to server (https://github.com/realm/realm-sync/pull/2492).
-
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -68,16 +58,13 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 * Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
 
 
-
 # Release 3.12.0 (2018-10-17)
-
 
 ### Enhancements
 * Enabled user impersonation when opening Realms on the server. You can now open a Realm with a particular user rather than the admin user. This can be useful when opening partial Realms as object-level permissions are not applied to admin users. ([#1295](https://github.com/realm/realm-object-server-private/pull/1295))
 
 ### Fixed
 * None
-
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -87,11 +74,11 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
 
 ### Notable known issues
-* REMEMBER TO COPY FROM PREVIOUS RELEASE!
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
 
 
 # Release 3.11.9 (2018-10-16)
-
 
 ### Enhancements
 * Various log messages, that are emitted by the server when the access token has expired, are now emitted at detail level, rather than at error level. Since it is impossible to avoid all such cases, they should not be considered as errors (https://github.com/realm/realm-sync/issues/2455).
@@ -99,7 +86,6 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 
 ### Fixed
 * Metric <prefix>.authentication.failed was sometimes incremented twice where it should only have been incremented once (https://github.com/realm/realm-sync/issues/2455).
-
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -115,13 +101,11 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 
 # Release 3.11.8 (2018-10-15)
 
-
 ### Enhancements
 * Added a counter named `ros_sync_proxy_backend_connection_errors`, which indicates the number of accumulated backend connection errors in the SyncProxyService.
 
 ### Fixed
 * None
-
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -137,7 +121,6 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 
 # Release 3.11.7 (2018-10-10)
 
-
 ### Enhancements
 * Some adjustments were made in the configuration of Prometheus Metrics:
   * Ensure that recently-added metrics are named with `ros_sync_` prefix
@@ -152,7 +135,6 @@ This was previously not supported and would have resulted in receiving a message
 `Client reset occurred for Realm at path ***. Shutting down preemptively` followed by a server
 shutdown. (Issue [#1255](https://github.com/realm/realm-object-server-private/issues/1255), since v2.0)
 * The default action of the sync server node wrapper on an uncaught exception is to abort instead of exit(1).
-
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -224,7 +206,8 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
 
 ### Notable known issues
-* REMEMBER TO COPY FROM PREVIOUS RELEASE!
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
 
 
 # Release 3.11.3 (2018-10-03)
@@ -321,7 +304,7 @@ Please see https://docs.realm.io/platform/self-hosted/installation for installat
 Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions.
 
 ### Notable known issues
-* None
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
 
 
 # Release 3.10.3 (2018-09-03)
@@ -357,9 +340,6 @@ Please see https://docs.realm.io/platform/self-hosted/installation for installat
 ### Installation & rollback instructions
 Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions. 
 
-### Notable known issues
-* None
-
 
 # Release 3.10.1 (2018-08-29)
 
@@ -375,9 +355,6 @@ Please see https://docs.realm.io/platform/self-hosted/installation for installat
 
 ### Installation & rollback instructions
 Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions.
-
-### Notable known issues
-* None
 
 
 # Release 3.10.0 (2018-08-28)
@@ -395,12 +372,8 @@ Please see https://docs.realm.io/platform/self-hosted/installation for installat
 ### Installation & rollback instructions
 Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions. 
 
-### Notable known issues
-* None
-
 
 # Release 3.10.0-alpha.3 (2018-08-27)
-
 
 ### Breaking changes
 * None
@@ -425,12 +398,8 @@ Please see https://docs.realm.io/platform/self-hosted/installation for installat
 ### Installation & rollback instructions
 Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions. 
 
-### Notable known issues
-* None
-
 
 # Release 3.9.17 (2018-08-24)
-
 
 ### Breaking changes
 * None
@@ -443,9 +412,6 @@ Please see https://docs.realm.io/platform/self-hosted/installation for installat
 
 ### Installation & rollback instructions
 Please see https://docs.realm.io/platform/self-hosted/installation for installation, upgrade and rollback instructions. 
-
-### Notable known issues
-* None
 
 
 # Release 3.10.0-alpha.2
