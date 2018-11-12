@@ -1,3 +1,23 @@
+# Release 3.13.1 (2018-11-12)
+
+### Enhancements
+* Added support for the latest Node.js 10 LTS.
+
+### Fixed
+* When using query-based sync, log compaction was skipped in the reference file. Enabling log compaction in the reference file when being used through  query-based sync revealed another oversight, namely that partial views did not correctly experience the equivalent of client reset. This situation could be experienced by users if they accessed a reference file both through query-based sync and regular sync (i.e., through Realm Studio), and the server decided to perform log compaction on the reference file as a result of writes made through regular sync. Fatal error messages in the server log containing `name=realm::_impl::CorruptedPartialFileAssoc, message=Expired reference version` are a sign the server is experiencing this issue.
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.13.0 (2018-11-06)
 
 
