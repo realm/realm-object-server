@@ -22,10 +22,11 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 # Release 3.13.1 (2018-11-12)
 
 ### Enhancements
-* Added support for the latest Node.js 10 LTS.
+* None
 
 ### Fixed
-* When using query-based sync, log compaction was skipped in the reference file. Enabling log compaction in the reference file when being used through  query-based sync revealed another oversight, namely that partial views did not correctly experience the equivalent of client reset. This situation could be experienced by users if they accessed a reference file both through query-based sync and regular sync (i.e., through Realm Studio), and the server decided to perform log compaction on the reference file as a result of writes made through regular sync. Fatal error messages in the server log containing `name=realm::_impl::CorruptedPartialFileAssoc, message=Expired reference version` are a sign the server is experiencing this issue.
+* When using query-based sync, fatal error messages in the server log containing `name=realm::_impl::CorruptedPartialFileAssoc, message=Expired reference version` could be seen. This situation could be experienced if a reference file was accessed both through query-based sync and regular sync (i.e., through Realm Studio), and the server decided to perform log compaction on the reference file. This has now been fixed.
+* A set of bugs that could lead to bad changesets were fixed. An example of an assertion, caused by these bugs, is: `[realm-core-5.10.0] Assertion failed: ndx < size() with (ndx, size()) = [742, 742]`. An example of an error in a log file, caused by these bugs, is: `ERROR: Client[1]: Connection[1]: Session[14]: Failed to parse, or apply received changeset: ndx out of range`.
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -40,7 +41,6 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 
 
 # Release 3.13.0 (2018-11-06)
-
 
 ### Enhancements
 * None
