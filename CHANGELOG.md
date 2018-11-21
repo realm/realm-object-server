@@ -1,3 +1,26 @@
+# Release 3.15.0 (2018-11-21)
+
+### Enhancements
+* Added support for the latest Node.js 10 LTS.
+* In cases of very high load the server could run out of memory. It's now possible to configure the maximum size of the backlog of changes that the server will accept before it starts rejecting connections. Clients will wait 5 min after a rejection before connecting again. 
+The `SyncServiceConfig.maxUploadBacklog` should therefore be configured so high that the server will be busy handling the queued work for at least 5 min.
+
+### Fixed
+* Fixed an issue that could cause ROS to unnecessarily delete its entire cache folder when a user is deleted rather than just the files associated with that user. ([#1348](https://github.com/realm/realm-object-server-private/pull/1348), since v3.1.3)
+* Fixed an issue that would prevent the proxy from connecting to the sync service if a request arrives before the sync service has started. This would have resulted in log messages, similar to `HTTP upgrade failed (service did not respond properly) ... "detail":"Timeout occured upgrading websocket request"`. ([#1349](https://github.com/realm/realm-object-server-private/pull/1349), since v2.0.7)
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.14.0 (2018-11-16)
 
 ### Enhancements
