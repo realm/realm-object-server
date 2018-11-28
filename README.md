@@ -23,10 +23,11 @@ This repo tracks [issues and feature ideas](https://github.com/realm/realm-mobil
 
 If you have an issues specific to the [Realm Database](https://realm.io/products/realm-database/), please create issues in the relevant repo:
 
-* [Java](https://github.com/realm/realm-java)
-* [Objective-C & Swift](https://github.com/realm/realm-cocoa)
-* [React Native](https://github.com/realm/realm-js)
-* [Xamarin](https://github.com/realm/realm-dotnet)
+* [Studio](https://github.com/realm/realm-studio/issues/new/choose)
+* [Java](https://github.com/realm/realm-java/issues/new/choose)
+* [Objective-C & Swift](https://github.com/realm/realm-cocoa/issues/new/choose)
+* [React Native](https://github.com/realm/realm-js/issues/new/choose)
+* [Xamarin](https://github.com/realm/realm-dotnet/issues/new/choose)
 
 ## Releases
 
