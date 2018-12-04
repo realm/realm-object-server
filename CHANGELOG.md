@@ -1,3 +1,31 @@
+# Release 3.16.0 (2018-12-04)
+
+### Enhancements
+* The server will now periodically "vacuum" random Realms by freeing unused reserved space and likely reduce the file size on disk. By default, this will happen every 120 seconds, but that can be configured by providing a value for `vacuumIntervalInSeconds` in `server.start()`. If you want to disable the feature, specify a negative value. ([realm-sync/#2497](https://github.com/realm/realm-sync/issues/2497))
+* Exposed an endpoint to update the status of users. Currently, only two statuses are supported - `active` and `suspended`. When a user is `suspended`, they won't be able to authenticate against ROS or obtain new access tokens. Their existing access tokens **will not** be revoked, so they will still be able to synchronize until the access tokens expire (typically 6 minutes). ([realm-sync/#2578](https://github.com/realm/realm-sync/issues/2578))
+* The log compaction algorithm has been improved, and should produce better results. It should also consume less memory while running.
+* The error message emitted when trying to open a Realm with an invalid path has been enhanced to provide more relevant information. Previously, the message was a static text, describing all scenarios which could produce invalid Realm paths (it used to start with `path is invalid. It should start with a slash, consist of Latin letters...`) and now it will specify what exactly is wrong with the path, for example: `The path '/~/cæt' (decoded: '/f52bcb1b8dc752ece60db5fe283820df/cæt') is invalid: encountered an invalid segment: 'cæt'. Error: segment is not composed of alphanumeric characters`. ([#1287](https://github.com/realm/realm-object-server-private/issues/1287))
+
+### Fixed
+* URL for documentation in the servers home page has been fixed to point to the correct Platform doc page. ([#1153](https://github.com/realm/realm-object-server-private/issues/1153))
+* An index out of range error in query based sync is fixed. The bug would manifest itself with a "list ndx out of range" error.
+* The `LIMIT` predicate was previously run before object level permissions were applied, which could result in less results being returned than were actually available.
+* If encryption was enabled, decrypted pages were not released until the file was closed, causing excessive usage of memory. Pages are now reclaimed periodically, ensuring that memory usage stays low.
+* The server will now notify clients that a client reset has occurred, even if the Realm is opened at the time. Previously clients would not be notified until the Realm was closed and reopened.
+* Fixed an issue that could result in a shutdown of the sync-worker with the message "...PartialSync: Violation of no-merge invariant...".
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.15.0 (2018-11-21)
 
 ### Enhancements
