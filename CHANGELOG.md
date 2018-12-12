@@ -1,3 +1,27 @@
+# Release 3.16.1 (2018-12-12)
+
+### Enhancements
+* None
+
+### Fixed
+* A segfault related to state size calculation could cause frequent restarts of the server. (Issue [#1374](https://github.com/realm/realm-object-server-private/issues/1374))
+* When deleting a reference Realm, partial views associated with it will now be removed. (Issue [#1021](https://github.com/realm/realm-object-server-private/issues/1021))
+* Fixed a bug that would prevent a user from logging in with two different authentication providers. This could be observed if two JWT providers were setup and produced identical user ids (e.g. a `user` and `admin` JWT providers where an admin user can login with both) or when users were manually created by calling the `AuthService.createOrUpdateUser` API. (Issue [#1372](https://github.com/realm/realm-object-server-private/issues/1372))
+* Fixed several log messages printing not providing contextual variable information. For example, the message "Permissions: The user with ID '%1' is not a member of any roles that have Class-level permissions. This is usually an error." will now print the the user id instead of "%1".
+* Fixed a an issue that caused the server crash with message: "Assertion failed: m_unblocked_changesets_from_downstream_byte_size == 0". (Issue [#2641](https://github.com/realm/realm-sync/issues/2641)).
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.16.0 (2018-12-04)
 
 ### Enhancements
