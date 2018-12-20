@@ -1,3 +1,24 @@
+# Release 3.16.5 (2018-12-20)
+
+### Enhancements
+* None
+
+### Fixed
+* Fixed a bug that would cause the server to accept multiple Realms that differ only in casing. These have all pointed to the same physical file on disk, but have caused duplicate entries to be created in the `/__admin` Realm and Studio. (Issue [#1385](https://github.com/realm/realm-object-server-private/issues/1385))
+* A severe bug in the server could lead to wrong conflict resolutions, assertion failures, corrupted file and possibly infinite loops where the server is stuck at 100% CPU usage. This bug would particular manifest itself if two clients are trying to upload incompatible schema changes, but could also occur in other scenarios. (Issue [#2650](https://github.com/realm/realm-sync/issues/2650), since 1.0.0)
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.16.3 (2018-12-17)
 
 ### Enhancements
