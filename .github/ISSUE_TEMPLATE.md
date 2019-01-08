@@ -43,9 +43,8 @@ Full projects that we can compile and run ourselves are ideal!
 
 - Realm Object Server Version: ?
 - Flavor:
-  - [ ] Developer
-  - [ ] Professional
-  - [ ] Enterprise
+  - [ ] Cloud
+  - [ ] Self-hosted
 - Server OS & Version: ? (e.g. CentOS 6)
 - Client SDK Version: ?
 - Client OS & Version: ?
