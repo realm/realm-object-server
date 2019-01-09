@@ -1,3 +1,31 @@
+# Release 3.16.6 (2019-01-09)
+
+### Enhancements
+* The [GraphQL service](https://github.com/realm/realm-graphql-service) has been integrated into ROS and is now part of the built-in services. If you were using the [npm package](https://www.npmjs.com/package/realm-graphql-service) to add it to your deployment, you can remove that from your package.json. If you're using `BasicServer` with the default set of services, the GraphQL service will be added automatically and you can modify the config by providing a `graphQLServiceConfigOverride` to the `server.start` params. If you're using the lower-level `Server` class, you can just update your import statements. ([#1406](https://github.com/realm/realm-object-server-private/pull/1406))
+
+### Fixed
+* In very rare scenarios, a client reconnecting to a deleted and recreated server realm could potentially corrupt the realm. This could be observed with an assertion similar to `Assertion failed: !(elem.ref &amp; 7) with (elem.ref) =  [5827176170]` or `Assertion failed: m_cf_last_seen_timestamps.size() == m_num_client_files`. (since 3.4.0)
+* In general, the server reports the total byte size of changesets waiting to be integrated. In the case where a 
+  client uploaded bad changesets, all changesets from the client in the work queue are discarded. These discarded 
+  changesets were not properly accounted for in the byte size calculation.
+* Fix a race condition when stopping the sync node server multiple times asynchronously which could produce a segfault or a system error.
+* Fixes uncaught exception `realm::util::File::PermissionDenied: remove_dir() failed: Directory not empty`.
+* Sync server's working directory is now protected with a file lock. This prevents accidental overlapping launch of 
+  multiple servers for the same working directory, which could otherwise cause corruption.
+* Fixed an issue where errors from vacuum operations were too verbose.
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.16.5 (2018-12-20)
 
 ### Enhancements
