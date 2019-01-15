@@ -1,3 +1,31 @@
+# Release 3.17.1 (2019-01-15)
+
+### Enhancements
+* Reduced the base memory/CPU usage per active connection. This significantly 
+  reduces the resource usage when there are many concurrent connections to the
+  server. ([Issue #1414](https://github.com/realm/realm-object-server-private/pull/1414))
+* When log compaction expires a client due to that client being offline longer
+  than the server's `historyTtl` setting, the server now also discards metadata
+  (reciprocal history) for that client, further reducing the size of the file.
+* Log compaction effectiveness has been improved slightly by ensuring that
+  changesets that no longer contain any substantial instructions also do not
+  leave any strings behind. (Issue [#2725](https://github.com/realm/realm-sync/issues/2725))
+
+### Fixed
+* Fixes an issue where the GraphQL service would not handle deleting a Realm gracefully and would get "stuck" where no requests would be handled until the server was restarted. On Realm Cloud this would manifest itself in receiving an error 502 after a minute period. ([RaaS#1373](https://github.com/realm/raas/issues/1373), since v3.11.7)
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.17.0 (2019-01-10)
 
 ### Enhancements
