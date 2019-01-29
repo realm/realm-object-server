@@ -1,14 +1,10 @@
 # Release 3.1.3
 
-
 ### Enhancements
 * None
 
 ### Fixed
-
-* Fixed a crash in the Consul client library. The crash occurs when the Consul server `ConsulDiscovery` is configured with becomes unreachable.
-  The library will now attempt to reconnect with an incremental backoff.
-
+* Fixed a crash in the Consul client library. The crash occurs when the Consul server `ConsulDiscovery` is configured with becomes unreachable. The library will now attempt to reconnect with an incremental backoff.
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -18,7 +14,7 @@
 Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
 
 ### Notable known issues
-
+* None
 
 
 # Release 3.1.2
