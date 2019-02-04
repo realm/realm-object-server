@@ -1,3 +1,35 @@
+# Release 3.18.0 (2019-02-04)
+
+### Enhancements
+* Added support for inverse relationships in the GraphQL service.
+* Reduced the base memory/CPU usage per active connection. This significantly reduces the resource usage when there are many concurrent connections to the server.
+* When log compaction expires a client due to that client being offline longer than the server's `historyTtl` setting, the server now also discards metadata(reciprocal history) for that client, further reducing the size of the file.
+* Log compaction effectiveness has been improved slightly.
+* Added the ability to use extra worker threads to speed up outward partial
+  sync.  This enhancement targets the use case where a few clients do smaller
+  updates, which are then distributed to a large number of listening
+  clients. The number of additional threads are controlled by the configuration
+  parameter `num_aux_psync_threads` (or `numAuxPsyncThreads` via Node.js). (PR
+  https://github.com/realm/realm-sync/pull/2703)
+* The GraphQL service will now serialize date values in ISO-8601 compatible way.
+* A new GraphQL configuration parameter is added -  `dateModelName` - that allows you to override the default model name used to express date properties. The default value is `Date`, but you can override that if you already have a class called `Date` in your Realm schema.
+* The GraphQL service now supports runtime configuration changes via the `/__configuration` Realm. Changing the `ServiceConfig.config` value will update the configuration of the GraphQL service with the json deserialized value. In the future, there will be administrative UI to configure that.
+
+### Fixed
+* None
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.17.1 (2019-01-15)
 
 ### Enhancements
