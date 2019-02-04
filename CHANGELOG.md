@@ -29,8 +29,7 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
   sync.  This enhancement targets the use case where a few clients do smaller
   updates, which are then distributed to a large number of listening
   clients. The number of additional threads are controlled by the configuration
-  parameter `num_aux_psync_threads` (or `numAuxPsyncThreads` via Node.js). (PR
-  https://github.com/realm/realm-sync/pull/2703)
+  parameter `num_aux_psync_threads` (or `numAuxPsyncThreads` via Node.js).
 * The GraphQL service will now serialize date values in ISO-8601 compatible way.
 * A new GraphQL configuration parameter is added -  `dateModelName` - that allows you to override the default model name used to express date properties. The default value is `Date`, but you can override that if you already have a class called `Date` in your Realm schema.
 * The GraphQL service now supports runtime configuration changes via the `/__configuration` Realm. Changing the `ServiceConfig.config` value will update the configuration of the GraphQL service with the json deserialized value. In the future, there will be administrative UI to configure that.
