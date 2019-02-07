@@ -2,9 +2,11 @@
 
 # Realm Platform
 
-The perfect backend for the next generation of reactive mobile apps
+The perfect backend for the next generation of reactive mobile apps.
 
-The Realm Platform delivers automatic and seamless realtime data sync and powerful event handling between server and devices. You never need to think about networking code again.
+The Realm Platform delivers automatic and seamless realtime data sync and powerful event handling between server and devices. You never need to think about networking code again. [Try Realm Cloud](https://cloud.realm.io/) for free to get a feeling for the power and ease of use! 
+
+This repo contains the self-hosted version of Realm Object Server and requires a license to use.
 
 The Realm Database is cross-platform, supporting both iOS and Android, and the Realm Object Server is ready to run on your servers or on your favorite cloud.
 
@@ -13,7 +15,7 @@ You can also check out our [launch post](https://realm.io/news/introducing-realm
 
 ## Samples
 
-The [samples](/samples) directory contains example code showing how to integrate Realm Object Server with your existing infrastructure.
+Example code showing how to integrate Realm Object Server with your existing infrastructure is located in our [Realm Server Side Samples repo](https://github.com/realm/realm-server-side-samples).
 
 For an example of how to get started with the more advanced Enterprise Edition, see [/getting-started-enterprise](/getting-started-enterprise).
 
@@ -31,8 +33,12 @@ If you have an issues specific to the [Realm Database](https://realm.io/products
 
 ## Releases
 
-You can download the latest release Check the [Releases Page](https://github.com/realm/realm-mobile-platform/releases) to see the list of latest versions and the changes introduced with each one.
+Check the [Releases Page](https://github.com/realm/realm-mobile-platform/releases) to see the latest versions and the changes introduced with each one. 
 Should you wish to get notified of new releases, you can use a service like [Libraries.io](https://libraries.io/npm/realm-object-server).
+
+## License
+
+The Realm Object Server and samples in the repo are proprietary and can only be used with a commercial license for self hosted Realm Object Server. 
 
 ## Code of Conduct
 
