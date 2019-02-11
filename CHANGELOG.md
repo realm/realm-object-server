@@ -1,3 +1,25 @@
+# Release 3.18.2 (2019-02-11)
+
+### Enhancements
+* Added a new operation to the Kubernetes Sync Worker - `copyfile` with operation arguments `{ "file": "sync-worker-file-path" }`. Executing it will copy a sync worker file while the server is running and ensure that the original and the copy have matching md5 checksums. Additionally, if `fileUploadFunction` is provided in the config, the file will be compressed using `gzip` and the function will be invoked with the archive as argument. ([PR #1447](https://github.com/realm/realm-object-server-private/pull/1447))
+* Added a new operation to the Kubernetes Sync Worker - `quarantine` with operation arguments `{ "file": "sync-worker-file-path" }`. Executing it will stop the server, move the file to a `quarantine` folder within the sync worker's data directory, then start the server again. Generally, it should be used if the server is failing to start due to a corrupt file. Should be used with great care as quarantining the file will result in client resets. ([PR #1453](https://github.com/realm/realm-object-server-private/pull/1453))
+* Cleaned up some log messages in the sync proxy service and added a connection counter metric, `ros_sync_proxy_connections_total`.
+
+### Fixed
+* Fixed the url of the errors thrown by ROS to point to a valid docs page. ([Issue #1394](https://github.com/realm/realm-object-server-private/issues/1394))
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.18.1 (2019-02-04)
 
 ### Enhancements
