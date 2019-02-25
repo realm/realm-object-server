@@ -17,8 +17,6 @@ You can also check out our [launch post](https://realm.io/news/introducing-realm
 
 Example code showing how to integrate Realm Object Server with your existing infrastructure is located in our [Realm Server Side Samples repo](https://github.com/realm/realm-server-side-samples).
 
-For an example of how to get started with the more advanced Enterprise Edition, see [/getting-started-enterprise](/getting-started-enterprise).
-
 ## Issue Tracking
 
 This repo tracks [issues and feature ideas](https://github.com/realm/realm-mobile-platform/issues) related the Realm Object Server, or other general issues _not_ related to specific SDKs.
@@ -34,7 +32,7 @@ If you have an issues specific to the [Realm Database](https://realm.io/products
 ## Releases
 
 Check the [Releases Page](https://github.com/realm/realm-mobile-platform/releases) to see the latest versions and the changes introduced with each one. 
-Should you wish to get notified of new releases, you can use a service like [Libraries.io](https://libraries.io/npm/realm-object-server).
+Should you wish to get notified of new releases, you can "Watch releases" in this repo through github or use a service like [Libraries.io](https://libraries.io/npm/realm-object-server).
 
 ## License
 
