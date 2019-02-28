@@ -47,7 +47,7 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 * None
 
 ### Fixed
-* None
+* Fixed an issue where metric names would be incorrectly decoded and the following message would be printed in the logs: Failed processing a metric: URI is not defined.
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
