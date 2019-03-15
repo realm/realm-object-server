@@ -1,3 +1,35 @@
+# ROS Release 3.19.0 (2019-03-15)
+
+### Enhancements
+* Updated some services to inherit from event emitter to emit events when processing some requests. The updated services are:
+  * AuthService
+    * `userCreated` emitted with argument `{ user: User, totalUsers: number }` when a user is created.
+  * SyncProxyService
+    * `socketConnected` emitted with argument `{ path: string, socketId: number, userAgent: string }` when a socket connection is established with the sync service.
+    * `socketDisconnected` emitted with argument `{ path: string, socketId: number, userAgent: string }` when a socket connection is terminated.
+  * RealmDirectoryService
+    * `realmCreated` emitted with argument `{ type: RealmType, path: string, syncLabel: string }` when a new Realm is created.
+* Added 2 more buckets for changeset_integrated histogram.
+* Added an option to `AuthService` called `allowAnyUserToRetrieveUserInfo` that enables any registered user to call the
+  `GET /auth/users/:user_id` and `GET /auth/users/:provider/:provider_id` HTTP APIs, either directly or with SDK methods
+  such as the JavaScript SDK's `Realm.Sync.User.retrieveAccount` method.
+* Reduced the performance impact of authenticating users with invalid credentials when using the username/password provider.
+
+### Fixed
+* Fixed a bug that would prevent the GraphQL Service's `diffUpdate` method from working with lists of primitive values.
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+* Server side Realm files do not compact automatically. The standalone commandline tool "realm-vacuum" can be manually executed to compress free space and old history (See https://docs.realm.io/platform/self-hosted/manage/server-side-file-growth#vacuum-utility).
+
+
 # Release 3.18.5 (2019-02-20)
 
 ### Enhancements
