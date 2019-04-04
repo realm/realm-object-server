@@ -1,3 +1,41 @@
+# ROS Release 3.20.1 (2019-04-04)
+
+Changes since ROS 3.19.0:
+
+**IMPORTANT: This version will perform an automatic file-format upgrade of certain files used for Query Based Sync. The server cannot be downgraded without restoring those files from backup. So it's recommended to do a full backup before the server is upgraded.**
+
+### Enhancements
+* Reduced the performance impact of authenticating users with invalid credentials when using the username/password provider.
+* A new argument for the Sync Service has been added.  `numAuxPsyncThreads` enables multithreading during query-based sync fan-out operations. Specify the number of additional worker threads desired in addition to the main worker thread. Defaults to `0` (disabled).
+* The GraphQL service has two new mutations added: `create**type**(input: **type**, updatePolicy)` and `create**type**s(input: [**type**], updatePolicy)` where `updatePolicy` is optional and may be `NEVER`, `ALL`, and `MODIFIED`. These correspond to the now deprecated mutations `add**type**`, `update**type**` and `diffUpdate**type**`. If `updatePolicy` is not specified, `NEVER` will be used. (Issue [#1496](https://github.com/realm/realm-object-server-private/issues/1496))
+* The server no longer rejects subscriptions based on queries with distinct and/or limit clauses.
+* Realm files used for query based sync have had all non-essential state removed, to reduce the file size on disk and improve query based sync performance. In some scenarios, this improves the latency of query-based sync by up to 25%, depending on the user's schema.
+* Various performance improvements for queries results in faster query based sync performance.
+* Memory usage has been decreased when using encryption.
+* Performance when using encryption has been significantly improved.
+* Commit performance is improved for realms with a long lifetime and many changes due to better handling of the free space in the file.
+* Added a warning when the nickname auth provider is started to more prominently alert developers of the fact it's not a secure provider.
+
+### Fixed
+* Fixed an issue that could cause the GraphQL service to end up always throwing an Internal Server Error for a particular Realm. This could happen when a reference Realm is deleted, then an access token, issued before the deletion, is used to connect to it via query-based sync. (PR [#1504](https://github.com/realm/realm-object-server-private/pull/1504) Since v3.16.6)
+* A Realm file deletion (including deletion of partial files as a result of history compaction) could cause various kinds of crashes, and even corruption within the server. (since v3.0.0).
+* A bug was fixed where if a user had `canCreate` but not `canUpdate` privileges on a class, the user would be able to create the object, but not actually set any meaningful values on that object, despite the rule that objects created within the same transaction can always be modified. (Issue #2574, since v3.0.0).
+* A segfault could occur under certain circumtances when queries compared two integer fields.
+* Fixed an issue that could prevent the server from starting with a message like `Cannot read property 'findIndex' of undefined`. This was caused when explicitly specifying the auth providers as opposed to using the runtime configuration API. (Issue [#1506](https://github.com/realm/realm-object-server-private/issues/1506), Since 3.19.0)
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+NOTE: This version will perform an automatic file-format upgrade of certain files used for Query Based Sync. The server cannot be downgraded without restoring those files from backup. So it's highly recommended to do a full backup before the server is upgraded.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption.
+
+
 # ROS Release 3.19.0 (2019-03-15)
 
 ### Enhancements
