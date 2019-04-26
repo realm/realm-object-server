@@ -1,3 +1,24 @@
+# ROS Release 3.21.1 (2019-04-26)
+
+Changes since 3.21.0:
+
+### Enhancements
+* None
+
+### Fixed
+*  A regression was introduced in version 3.21.0 that could cause the server to decide to perform full history compaction on every upload, causing severe performance degradation. (Issue [#2962](https://github.com/realm/realm-sync/issues/2962), since 3.21.0)
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+
+
 # ROS Release 3.20.1 (2019-04-04)
 
 Changes since ROS 3.19.0:
