@@ -6,7 +6,29 @@ Changes since 3.21.0:
 * None
 
 ### Fixed
-*  A regression was introduced in version 3.21.0 that could cause the server to decide to perform full history compaction on every upload, causing severe performance degradation. (Issue [#2962](https://github.com/realm/realm-sync/issues/2962), since 3.21.0)
+*  A regression was introduced in version 3.21.0 that could cause the server to decide to perform full history compaction on every upload, causing performance degradation. (Issue [#2962](https://github.com/realm/realm-sync/issues/2962), since 3.21.0)
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/platform/using-synced-realms/troubleshoot/version-compatibilities).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installation) for installation, upgrade and rollback instructions.
+
+### Notable known issues
+* Encrypting existing realm files is not possible. Only fresh deployments with zero state can use realms encryption. We're working on a migration path for existing deployments.
+
+
+# Release 3.21.0 (2019-04-10)
+
+Changes since 3.20.1:
+
+### Enhancements
+* Added support for a new way to quickly download a Full Realm file and to automatically resolve client-reset type errors. Client SDKs need to be updated to take advantage of this feature. Keep an eye on the SDK's changelog for more information.
+* Added support for including user specified backlinks in a query based subscription. Client SDKs need to be updated to take advantage of this feature. Keep an eye on the SDK's changelog for more information.
+
+### Fixed
+* None
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
