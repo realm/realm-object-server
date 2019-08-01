@@ -1,13 +1,18 @@
 # ROS Release 3.23.6 (2019-08-01)
 
+Changes since 3.23.1:
 
-Changes since 3.23.5:
+### Breaking changes
+* Removed the ability to specify `is_admin` for logins with the nickname provider (Issue [#1554])
 
 ### Enhancements
 * Added more detailed error message when a user creation is rejected due to the userId requiring url encoding (only when logging in via JWT). The new message will return both the encoded and non-encoded userId to make it easier to spot the invalid characters.
+* Added `@` to the list of characters escaped by default by the JWT provider. (Issue [#1140](https://github.com/realm/realm-object-server-private/issues/1140))
 
 ### Fixed
 * Fixed an issue that would cause the JWT provider to not replace all invalid characters in a userId. For example, a user with the Id `foo|bar|email` would result in an error being thrown even if the `|` character is marked for escaping.
+* Fixed an issue that could cause GraphQL mutations not to update `int?` values when `updatePolicy` was set to `MODIFIED`. ([Issue HELP-10578](https://jira.mongodb.org/browse/HELP-10578))
+* Updated vulnerable dependencies to patched versions.
 
 ### Compatibility
 * Server API's are backwards compatible with all previous ROS releases in the 3.x series.
@@ -22,7 +27,6 @@ Please see the [Realm Docs](https://docs.realm.io/platform/self-hosted/installat
 
 
 # ROS Release 3.23.1 (2019-06-07)
-
 
 Changes since 3.23.0:
 
