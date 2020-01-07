@@ -1,3 +1,21 @@
+# ROS Release 3.28.2 (2020-01-07)
+
+Changes since <???>:
+
+### Enhancements
+* None
+
+### Fixed
+* Fixed an issue which could lead to messages like `Error: Invalid credentials - failed to parse token data at SyncProxyService` in the logs while ROS is shutting down.
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/server/installation#version-compatibility-table).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/server/manage/upgrading) for installation, upgrade and rollback instructions.
+
+
 # ROS Release 3.23.6 (2019-08-01)
 
 Changes since 3.23.1:
