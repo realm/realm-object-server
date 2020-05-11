@@ -1,3 +1,21 @@
+# ROS Release 3.28.5 (2020-05-11)
+
+Changes since 3.28.4:
+
+### Enhancements
+* None
+
+### Fixed
+* When trace logging was enabled, the request and response body was logged, which may have included sensitive information for login calls. The request and response bodies for `/auth` requests are no longer logged.
+
+### Compatibility
+* Server API's are backwards compatible with all previous ROS releases in the 3.x series.
+* The server is compatible with all previous [SDKs supporting the ROS 3.x series](https://docs.realm.io/server/installation#version-compatibility-table).
+
+### Installation & rollback instructions
+Please see the [Realm Docs](https://docs.realm.io/server/manage/upgrading) for installation, upgrade and rollback instructions.
+
+
 # ROS Release 3.28.2 (2020-01-07)
 
 Changes since <???>:
