@@ -1,3 +1,8 @@
+# DEPRECATED
+With the introduction of [MongoDB Realm](https://www.mongodb.com/realm), this package is **deprecated**. Please use [MongoDB Realm Cloud](https://docs.mongodb.com/realm/).
+
+------
+
 ![Realm](logo.png)
 
 # Realm Platform
